@@ -14,5 +14,8 @@
   "engines": {
     "node": ">=0.10.0"
   },
-  "readmeFilename": "README.md"
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "grunt": "^0.4.5"
+  }
 }
