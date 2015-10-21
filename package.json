@@ -1,11 +1,12 @@
 {
-  "name": "project-name",
-  "description": "project created by thinkjs",
-  "version": "0.1.0",
-  "author": {},
+  "name": "Lawrence",
+  "description": "一个基于 node 的二手市场",
+  "version": "0.0.1",
+  "author": "chinakids<494063570@qq.com>",
   "dependencies": {
     "thinkjs": "*"
   },
+  "script":"node www/index.js",
   "keywords": [],
   "repository": {
     "type": "git",
