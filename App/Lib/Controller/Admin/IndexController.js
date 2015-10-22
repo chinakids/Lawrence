@@ -6,9 +6,10 @@ module.exports = Controller("Home/BaseController", function(){
   "use strict";
   return {
     indexAction: function(){
-      var model = D('AdminUser');
-      console.log(model)
-      console.log(model.getAdmin())
+      Promise.all([D('AdminUser').getAdmin()]).then(function(data){
+        console.log(data)
+      });
+
       //render View/Home/index_index.html file
       this.display();
     }
