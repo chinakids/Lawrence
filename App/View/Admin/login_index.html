@@ -7,16 +7,24 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
-    <link rel="stylesheet" href="../resource/admin/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/resource/admin/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="../resource/admin/plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/resource/admin/plugins/font-awesome-min/css/font-awesome.min.css">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="../resource/admin/plugins/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="/resource/admin/plugins/ionicons-min/css/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="../resource/admin/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="/resource/admin/dist/css/AdminLTE.min.css">
     <!-- iCheck -->
-    <link rel="stylesheet" href="../resource/admin/plugins/iCheck/square/blue.css">
-
+    <link rel="stylesheet" href="/resource/admin/plugins/iCheck/square/blue.css">
+    <style>
+      .alert{
+        padding: 7px;
+        margin: 0 0 15px 0;
+      }
+      .alert h4{
+        margin: 0;
+      }
+    </style>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -32,23 +40,24 @@
       <div class="login-box-body">
         <p class="login-box-msg">Sign in to start your session</p>
           <div class="form-group has-feedback">
-            <input type="email" class="form-control" placeholder="Email">
+            <input id="username" type="text" class="form-control" placeholder="Username">
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">
-            <input type="password" class="form-control" placeholder="Password">
+            <input id="password" type="password" class="form-control" placeholder="Password">
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
+          <div class="tip"></div>
           <div class="row">
             <div class="col-xs-8">
               <div class="checkbox icheck">
                 <label>
-                  <input type="checkbox"> &nbsp;Remember Me
+                  <input type="checkbox" id="remember"> &nbsp;Remember Me
                 </label>
               </div>
             </div><!-- /.col -->
             <div class="col-xs-4">
-              <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+              <button id="submit" type="button" class="btn btn-primary btn-block btn-flat">Sign In</button>
             </div><!-- /.col -->
           </div>
 
@@ -56,11 +65,11 @@
     </div><!-- /.login-box -->
 
     <!-- jQuery 2.1.4 -->
-    <script src="../resource/admin/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <script src="/resource/admin/plugins/jQuery/jQuery-2.1.4.min.js"></script>
     <!-- Bootstrap 3.3.5 -->
-    <script src="../resource/admin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/resource/admin/bootstrap/js/bootstrap.min.js"></script>
     <!-- iCheck -->
-    <script src="../resource/admin/plugins/iCheck/icheck.min.js"></script>
+    <script src="/resource/admin/plugins/iCheck/icheck.min.js"></script>
     <script>
       $(function () {
         $('input').iCheck({
@@ -68,6 +77,17 @@
           radioClass: 'iradio_square-blue',
           increaseArea: '20%' // optional
         });
+        $('#submit').click(function(){
+          $.post('/admin/login/login',{
+            username:$('#username').val(),
+            password:$('#password').val(),
+            remember:$('#remember').parent().attr('aria-checked')
+          },function(data){
+            var successTemplate = '<div class="alert alert-success alert-dismissable"><h4><i class="icon fa fa-check"></i> '+data.msg+'</h4></div>',
+                errorTemplate = '<div class="alert alert-danger alert-dismissable"><h4><i class="icon fa fa-ban"></i> '+data.msg+'</h4></div>';
+                $('.tip').append(successTemplate)
+          })
+        })
       });
     </script>
   </body>

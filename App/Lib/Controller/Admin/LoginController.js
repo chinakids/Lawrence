@@ -9,9 +9,10 @@ module.exports = Controller("Home/BaseController", function(){
       //render View/Home/index_index.html file
       this.display();
     },
-    postLoginAction: function(){
+    loginAction: function(){
       if(this.isPost()){
-        console.log('111')
+        this.end(md5(md5('pengyujie')));
+        //console.log('111')
       }
     }
   };
