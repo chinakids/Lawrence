@@ -15,7 +15,7 @@ module.exports = Controller("Admin/BaseController", function(){
       var cookies = self.cookie();
 
       var status = (function(cookies){
-        return md5(md5(cookies.name+'this@is%admin_')) == cookies.user_sig ? true : false;
+        return global.sig(cookies.name,'admin') == cookies.user_sig ? true : false;
       })(cookies);
 
       if(!status){

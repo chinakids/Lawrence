@@ -13,7 +13,7 @@ module.exports = Controller("Admin/BaseController", function(){
       var cookies = self.cookie();
 
       var status = (function(cookies){
-        return md5(md5(cookies.name+'this@is%admin_')) == cookies.user_sig ? true : false;
+        return global.sig(cookies.name,'admin') == cookies.user_sig ? true : false;
       })(cookies);
 
       if(status){
@@ -43,11 +43,10 @@ module.exports = Controller("Admin/BaseController", function(){
             self.error(1003,'密码错误').end()
           }
           //以下为登陆成功功能
-          var mixinStr = 'this@is%admin_';
           self.cookie('name',data[0].name, {
             httponly: true
           });
-          self.cookie("user_sig",md5(md5(data[0].name+mixinStr)), {
+          self.cookie("user_sig",global.sig(data[0].name,'admin'), {
             httponly: true, //httponly
             timeout: req.remember == true ? 60*60*24*999 : 60*60*24*3 // 超时时间，单位秒
           });
