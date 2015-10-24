@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/resource/admin/dist/css/AdminLTE.min.css">
     <!-- iCheck -->
     <link rel="stylesheet" href="/resource/admin/plugins/iCheck/square/blue.css">
+    <script src="/resource/js/v.js"></script>
     <style>
       .alert{
         padding: 7px;
@@ -77,15 +78,40 @@
           radioClass: 'iradio_square-blue',
           increaseArea: '20%' // optional
         });
+        function showTip(msg,type,fade){
+          $('.tip').html('')
+          var type = type || 'success',
+              fade = fade || true,
+              successTemplate = '<div class="alert alert-success alert-dismissable"><h4><i class="icon fa fa-check"></i> '+msg+'</h4></div>',
+              errorTemplate = '<div class="alert alert-danger alert-dismissable"><h4><i class="icon fa fa-ban"></i> '+msg+'</h4></div>';
+              $('.tip').append(type == 'success' ? successTemplate : errorTemplate)
+          if(fade){
+            setTimeout(function(){
+              $('.tip').html('')
+            },2000)
+          }
+        }
         $('#submit').click(function(){
+          var username = $('#username').val(),
+              password = $('#password').val();
+          if(!v('s3-16',username)){
+            showTip('用户名错误','error');
+            return false;
+          }
+          if(!v('*',password)){
+            showTip('密码不可为空','error');
+            return false;
+          }
           $.post('/admin/login/login',{
-            username:$('#username').val(),
-            password:$('#password').val(),
+            username:username,
+            password:password,
             remember:$('#remember').parent().attr('aria-checked')
           },function(data){
-            var successTemplate = '<div class="alert alert-success alert-dismissable"><h4><i class="icon fa fa-check"></i> '+data.msg+'</h4></div>',
-                errorTemplate = '<div class="alert alert-danger alert-dismissable"><h4><i class="icon fa fa-ban"></i> '+data.msg+'</h4></div>';
-                $('.tip').append(successTemplate)
+            if(data.errno != 0){
+              showTip(data.errmsg,'error');
+            }else{
+              showTip(data.data.msg);
+            }
           })
         })
       });
