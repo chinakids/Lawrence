@@ -1,7 +1,7 @@
 /**
  * 项目里的Controller基类
  * 这里做一些通用的处理逻辑，其他Controller继承该类
- * @param  {[type]} 
+ * @param  {[type]}
  * @return {[type]}         [description]
  */
 module.exports = Controller(function(){
@@ -10,6 +10,9 @@ module.exports = Controller(function(){
     init: function(http){
       this.super("init", http);
       //其他的通用逻辑
+    },
+    _404Action: function(){
+      this.display();
     }
   }
 })

@@ -1,6 +1,6 @@
 /**
  * controller
- * @return 
+ * @return
  */
 module.exports = Controller("Home/BaseController", function(){
   "use strict";

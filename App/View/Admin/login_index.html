@@ -111,6 +111,9 @@
               showTip(data.errmsg,'error');
             }else{
               showTip(data.data.msg);
+              setTimeout(function(){
+                window.location.href = '/admin/';
+              },2000)
             }
           })
         })
