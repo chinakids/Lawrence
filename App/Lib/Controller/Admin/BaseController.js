@@ -9,6 +9,7 @@ module.exports = Controller(function(){
   return {
     init: function(http){
       this.super("init", http);
+      console.log('执行 Base:init 模块')
       //其他的通用逻辑
     },
     _404Action: function(){
