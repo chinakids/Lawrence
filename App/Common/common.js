@@ -52,10 +52,10 @@ global.adminMixinStr = 'this_admin_';
 
 global.userMixinStr = 'this_user_';
 
-global.sig = function(name,type){
+global.sig = function(name,session,type){
   if(type == 'admin'){
-    return md5(md5(name+global.adminMixinStr));
+    return md5(md5(name+global.adminMixinStr+session));
   }else if(type == 'user'){
-    return md5(md5(name+global.userMixinStr));
+    return md5(md5(name+global.userMixinStr+session));
   }
 }

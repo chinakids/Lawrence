@@ -13,10 +13,10 @@ module.exports = Controller("Admin/BaseController", function(){
       var cookies = self.cookie();
 
       var status = (function(cookies){
-        return global.sig(cookies.name,'admin') == cookies.user_sig ? true : false;
+        return global.sig(cookies.name,cookies.thinkjs,'admin') == cookies.user_sig ? true : false;
       })(cookies);
-
-      if(status){
+      console.log('1:'+(status && http.action == 'index'));
+      if(status && http.action == 'index'){
         // 如果未登录跳转到登录页。由于 redirect 方法返回的是个 pendding promise，那么后面的 action 方法并不会被执行
         return self.redirect("/admin/");
       }
@@ -46,16 +46,23 @@ module.exports = Controller("Admin/BaseController", function(){
           self.cookie('name',data[0].name, {
             httponly: true
           });
-          self.cookie("user_sig",global.sig(data[0].name,'admin'), {
+          //console.log(self.cookie('thinkjs'));
+          self.cookie("user_sig",global.sig(data[0].name,self.cookie('thinkjs'),'admin'), {
             httponly: true, //httponly
             timeout: req.remember == true ? 60*60*24*999 : 60*60*24*3 // 超时时间，单位秒
           });
+          self.session('userInfo',{
+            name : data[0].name,
+            level: data[0].level
+          })
           self.success({msg:'登录成功'}).end();
         });
       }
     },
     logoutAction: function(){
-      this.cookie("user_sig", '').success({msg:'退出成功'})
+      this.session();
+      this.cookie("user_sig", '');
+      this.redirect("/admin/");
     }
   };
 });

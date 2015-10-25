@@ -13,9 +13,8 @@ module.exports = Controller("Admin/BaseController", function(){
       //return this.session("userInfo").then(function(data){
       //console.log(data);
       var cookies = self.cookie();
-
       var status = (function(cookies){
-        return global.sig(cookies.name,'admin') == cookies.user_sig ? true : false;
+        return global.sig(cookies.name,cookies.thinkjs,'admin') == cookies.user_sig ? true : false;
       })(cookies);
 
       if(!status){
