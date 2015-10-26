@@ -15,7 +15,7 @@ module.exports = Controller("Admin/BaseController", function(){
       var status = (function(cookies){
         return global.sig(cookies.name,cookies.thinkjs,'admin') == cookies.user_sig ? true : false;
       })(cookies);
-      console.log('1:'+(status && http.action == 'index'));
+      //console.log('1:'+(status && http.action == 'index'));
       if(status && http.action == 'index'){
         // 如果未登录跳转到登录页。由于 redirect 方法返回的是个 pendding promise，那么后面的 action 方法并不会被执行
         return self.redirect("/admin/");
