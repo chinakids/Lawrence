@@ -8,9 +8,18 @@ module.exports = Controller(function(){
   'use strict';
   return {
     init: function(http){
+      //var http = obj[0] ,self =obj[1];
       this.super("init", http);
-      console.log('执行 Base:init 模块')
-      //其他的通用逻辑
+      //return this.session("userInfo").then(function(data){
+      //console.log(data);
+      var cookies = http.cookie;
+      var status = (function(cookies){
+        return global.sig(cookies.name,cookies.thinkjs,'admin') == cookies.user_sig ? true : false;
+      })(cookies);
+      console.log('执行 base:init ::' +status);
+      if(!status && http.action != 'login'){
+        return this.redirect('/admin/index/login');
+      }
     },
     _404Action: function(){
       this.display();

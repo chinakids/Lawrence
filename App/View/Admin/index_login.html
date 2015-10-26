@@ -102,7 +102,7 @@
             showTip('密码不可为空','error');
             return false;
           }
-          $.post('/admin/login/login',{
+          $.post('/admin/index/login',{
             username:username,
             password:password,
             remember:$('#remember').parent().attr('aria-checked')
