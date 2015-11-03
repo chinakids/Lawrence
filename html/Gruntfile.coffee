@@ -17,6 +17,11 @@ module.exports = (grunt) ->
           './resource/coffee/**/*.coffee'
         ]
         tasks: ['coffee','uglify']
+      bower:
+        files:[
+          './bower.json'
+        ]
+        task:['wiredep']
     less:
       options:
         compress: true
@@ -49,6 +54,9 @@ module.exports = (grunt) ->
             src: '**/*.js',
             dest: './resource/js'
         }]
+    wiredep:
+      app:
+        src: ['./**/*.html']
 
 
 
