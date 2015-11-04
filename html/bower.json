@@ -16,8 +16,9 @@
     "test",
     "tests"
   ],
-  "devDependencies": {
+  "dependencies": {
     "Art-Reactor": "art-reactor#*",
-    "bootstrap": "~3.3.5"
+    "bootstrap": "~3.3.5",
+    "normalize-strings": "normalize#~1.0.4"
   }
 }
