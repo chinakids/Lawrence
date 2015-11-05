@@ -5,7 +5,7 @@ module.exports = (grunt) ->
   #这里有些配置 win&linux 下没测试过，建议运行在 mac 下
   grunt.initConfig
     #项目参数
-    pkg: grunt.file.readJSON('../package.json')
+    pkg: grunt.file.readJSON('./../package.json')
     watch:
       less:
         files: [
@@ -56,7 +56,7 @@ module.exports = (grunt) ->
         }]
     wiredep:
       app:
-        src: ['./**/*.html']
+        src: ['*.html','./**/*.html']
 
 
 
