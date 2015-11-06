@@ -21,7 +21,7 @@ module.exports = (grunt) ->
         files:[
           './bower.json'
         ]
-        task:['wiredep']
+        task:['wiredep:app']
     less:
       options:
         compress: true
@@ -62,6 +62,7 @@ module.exports = (grunt) ->
 
   #注冊任务
   grunt.registerTask 'default', [
+    'wiredep',
     'watch'
   ]
 
