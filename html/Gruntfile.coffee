@@ -9,7 +9,8 @@ module.exports = (grunt) ->
     watch:
       less:
         files: [
-          './resource/less/**/*.less'
+          './resource/less/**/*.less',
+          '!./resource/less/var.less'
         ]
         tasks: ['less']
       coffee:

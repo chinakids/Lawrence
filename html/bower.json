@@ -19,6 +19,6 @@
   "dependencies": {
     "Art-Reactor": "art-reactor#*",
     "bootstrap": "~3.3.5",
-    "normalize-strings": "normalize#~1.0.4"
+    "normalize-css": "normalize.css#~3.0.3"
   }
 }
