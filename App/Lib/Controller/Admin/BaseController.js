@@ -16,7 +16,6 @@ module.exports = Controller(function(){
       var status = (function(cookies){
         return global.sig(cookies.name,cookies.thinkjs,'admin') == cookies.user_sig ? true : false;
       })(cookies);
-      console.log('执行 base:init ::' +status);
       if(!status && http.action != 'login'){
         return this.redirect('/admin/index/login');
       }

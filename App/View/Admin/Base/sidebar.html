@@ -36,6 +36,14 @@
       <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
       <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
     </ul>
+    <script>
+      $(function(){
+        var href = document.location.href,
+            host = document.location.host;
+        var url = href.replace(host,'');
+        $('a[href=\''+url+'\']').parent().addClass('active');
+      })
+    </script>
   </section>
   <!-- /.sidebar -->
 </aside>
