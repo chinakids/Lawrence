@@ -42,10 +42,10 @@
             host = 'http://'+document.location.host;
         var url = href.replace(host,'');
         console.log(url)
-        var sv = ;
-        $('a[href=\''+url+'\']').parent().addClass('active');
+        var sv =$('a[href=\''+url+'\']');
+        sv.parent().addClass('active');
         sv.parents('.treeview-menu').addClass('menu-open');
-
+        sv.parents('.treeview').addClass('active');
       });
     </script>
   </section>
