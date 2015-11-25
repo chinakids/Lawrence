@@ -39,7 +39,7 @@
     <script>
       $(function(){
         var href = document.location.href,
-            host = document.location.host;
+            host = 'http://'+document.location.host;
         var url = href.replace(host,'');
         console.log(url)
         $('a[href=\''+url+'\']').parent().addClass('active');
