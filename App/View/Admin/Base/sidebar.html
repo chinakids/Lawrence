@@ -43,6 +43,9 @@
         var url = href.replace(host,'');
         console.log(url)
         var sv =$('a[href=\''+url+'\']');
+        //先移除
+        $('.sidebar-menu .active').removeClass('active');
+        //再添加
         sv.parent().addClass('active');
         sv.parents('.treeview-menu').addClass('menu-open');
         sv.parents('.treeview').addClass('active');
