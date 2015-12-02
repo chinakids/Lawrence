@@ -12,13 +12,15 @@ class Waterfall
       console.error 'option传入参数不可为Object以外类型'
       return false
     extend = (oldObj,newObj) ->
-      for key in newObj
+      for key of newObj
+        console.log key
         if typeof oldObj[key] isnt 'object'
           oldObj[key] = newObj[key]
         else
           extend oldObj[key],newObj[key]
 
     extend @opt,option
+
     unless @opt.test
       @delay()
 
@@ -30,6 +32,7 @@ class Waterfall
       array.push 0
       i++
     #缓存数据
+    console.log array
     @cache =
       mainDomW : $('.waterfall').width()
       list : array
@@ -52,7 +55,7 @@ class Waterfall
   #遍历子节点
   initDom:() ->
     index = 0
-    element = $(opt.mainDom).find(opt.boxDom)
+    element = $(@opt.mainDom).find(@opt.boxDom)
     self = @
     i = 0
     while i < element.size()
@@ -62,7 +65,7 @@ class Waterfall
           'left' : self.cache.boxDomW * data + ( if data is 0 then 0 else self.opt.between)*data
         self.cache.list[data] = self.cache.list[data] + ele.height() + self.opt.between
       i++
-      
+
   #寻找最小值
   findMin:(ele,callback) ->
     cb = callback or () ->
