@@ -5,4 +5,4 @@ $ () ->
   #初始化瀑布流
   waterfall = new Waterfall
     test : false
-    between : 15
+    between : 25
