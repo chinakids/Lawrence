@@ -6,3 +6,4 @@ $ () ->
   waterfall = new Waterfall
     test : false
     between : 25
+    boxDom : '.waterfall-card'
