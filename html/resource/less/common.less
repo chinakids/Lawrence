@@ -85,8 +85,20 @@ nav.nav{
     width: 24%;
     height: auto;
     border:1px solid @gray-lighter;
+    box-shadow:0 0 20px 2px @gray-lighter;
+    transition: all .5s;
+    cursor: pointer;
     img{
       width: 100%;
+    }
+    p{
+      margin: 0;
+      padding:3px 10px;
+      overflow: hidden;
+      line-height: 30px;
+    }
+    &:hover{
+      box-shadow:0 0 20px 2px @gray-light;
     }
   }
 }
