@@ -11,6 +11,6 @@ $ () ->
   #滚动判断
   $(window).scroll () ->
     if $(document).scrollTop() >= 30
-      $('.header,.nav').addClass('mini')
+      $('.header,.nav,.content').addClass('mini')
     else
-      $('.header,.nav').removeClass('mini')
+      $('.header,.nav,.content').removeClass('mini')
