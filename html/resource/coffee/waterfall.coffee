@@ -32,7 +32,6 @@ class Waterfall
       array.push 0
       i++
     #缓存数据
-    console.log array
     @cache =
       mainDomW : $('.waterfall').width()
       list : array
@@ -65,6 +64,10 @@ class Waterfall
           'left' : self.cache.boxDomW * data + ( if data is 0 then 0 else self.opt.between)*data
         self.cache.list[data] = self.cache.list[data] + ele.height() + self.opt.between
       i++
+    #设置高度
+    @findMax (data) ->
+      $(self.opt.mainDom).height(self.cache.list[data])
+
 
   #寻找最小值
   findMin:(ele,callback) ->
@@ -78,5 +81,18 @@ class Waterfall
         break
       i++
     cb.call @,ele,index
+
+  #寻找最大值
+  findMax:(callback) ->
+    cb = callback or () ->
+    index = 0;
+    max = Math.max.apply @,@cache.list
+    i = 0;
+    while i < @opt.row
+      if @cache.list[i] is max
+        index = i
+        break
+      i++
+    cb.call @,index
 
 window.Waterfall = Waterfall
