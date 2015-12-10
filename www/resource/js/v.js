@@ -1,3 +1,0 @@
-/*! Lawrence - v0.0.1 - 2015-10-24 */
-(function(){var v;v=function(){function v(type,str){var dataType,regText,status;if(dataType={"*":/[\w\W]+/,"*6-16":/^[\w\W]{6,16}$/,n:/^\d+$/,"n6-16":/^\d{6,16}$/,s:/^[\u4E00-\u9FA5\uf900-\ufa2d\w\.\s]+$/,"s3-16":/^[\u4E00-\u9FA5\uf900-\ufa2d\w\.\s]{3,16}$/,p:/^[0-9]{6}$/,m:/^13[0-9]{9}$|14[0-9]{9}|15[0-9]{9}$|18[0-9]{9}$/,e:/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/,url:/^(\w+:\/\/)?\w+(\.\w+)+.*$/},void 0!==type&&void 0!==str)return str=str,regText=dataType[type],void 0===regText?(status=str.match(eval(type)),status?str:!1):(status=str.match(regText),status?str:!1);throw new Error("V方法需要传入两个参数")}return v}(),window.v=v}).call(this);
-//# sourceMappingURL=v.js.map
