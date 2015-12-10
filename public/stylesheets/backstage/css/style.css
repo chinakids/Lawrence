@@ -1,0 +1,66 @@
+
+.myInfoBox {
+    padding: 15px;
+}
+
+.sysSurvey dt {
+    font-weight: normal;
+}
+
+.thumbnailView .list-group-item {
+    border: none;
+    width: 105px;
+    height: 130px;
+    float: left;
+}
+
+.thumbnailView .list-group-item .fileImg {
+    width: 80px;
+    margin: 0 auto;
+    font-size: 60px;
+    color: #F5DA9A;
+    cursor: pointer;
+}
+
+.thumbnailView .list-group-item .fileImg img {
+    width: 80px;
+    height: 80px;
+}
+
+.thumbnailView .list-group-item .fileName {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/*注册用户列表*/
+.users-list > li {
+    width: 9%;
+}
+
+.users-list > li > img {
+    max-width: 75%;
+}
+
+.main-statistics li {
+    list-style-type: none;
+}
+
+.datalist.noRead {
+    font-weight: 700;
+    color: #000;
+}
+
+/*进度条*/
+.system-progress {
+    background: #fff;
+    border-radius: 5px;
+    height: 14px;
+    margin: 0 auto;
+    padding: 2px 3px;
+    width: 300px;
+}
+
+.modal-msg{font-size: 14px;}
