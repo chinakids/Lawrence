@@ -7,5 +7,3 @@ Disallow: /ueditor/
 Disallow: /*?
 Disallow: /*.html?*
 Disallow:/content/searchResult/items?
-
-Sitemap:http://www.html-js.cn/sitemap.xml
