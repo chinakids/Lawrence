@@ -436,7 +436,6 @@ var siteFunc = {
 
     //根据模板获取跳转链接
     renderToTargetPageByType : function(req,res,type,params){
-
         this.getFrontTemplate(req,res,function(temp) {
             var targetPath;
             if (temp) {
@@ -481,10 +480,9 @@ var siteFunc = {
                     targetPath = settings.SYSTEMTEMPFORDER + temp.alias + '/public/' + params.page;
                     res.render(targetPath, siteFunc.setDataForError(req, res,  params, temp.alias, defaultTempPath));
                 }
-
             }else{
                 res.writeHeader(200, {'Content-Type':'text/javascript;charset=UTF-8'});
-                // res.end('亲爱哒，请先在后台安装并启用模板喔~!');
+                res.end('亲爱哒，请先在后台安装并启用模板喔~!');
             }
         })
 
