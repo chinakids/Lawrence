@@ -7,4 +7,5 @@ sftp-config.json
 .cache
 .DS_Store
 .git
-views/web/temp
+views/web/temp/
+public/upload/
