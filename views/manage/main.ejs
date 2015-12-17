@@ -8,17 +8,57 @@
                         <h5 class="box-title">概况</h5>
                     </div><!-- /.box-header -->
                     <div class="box-body">
-                        <ul class="row text-info main-statistics">
-                            <div class="col-md-6">
-                                <li><i class="fa fa-fw fa-user"></i> 管理员 {{mainData.adminUserCount}}</li>
-                                <li><i class="fa fa-fw fa-users"></i> 用户 {{mainData.regUsersCount}}</li>
-                                <li><i class="fa fa-fw fa-file-text-o"></i> 文档 {{mainData.contentsCount}}</li>
-                                <li><i class="fa fa-fw fa-comments-o"></i> 留言 {{mainData.msgCount}}</li>
-                            </div>
-                            <div class="col-md-6">
-                                <!--<li><i class="fa fa-fw fa-comments-o"></i> 留言 {{mainData.msgCount}}</li>-->
-                            </div>
-                        </ul>
+
+                              <div class="row">
+                                  <div class="col-lg-3 col-xs-6">
+                                    <!-- small box -->
+                                    <div class="small-box bg-aqua">
+                                      <div class="inner">
+                                        <h3>{{mainData.adminUserCount}}</h3>
+                                      </div>
+                                      <div class="icon">
+                                        <i class="fa fa-fw fa-user"></i>
+                                      </div>
+                                      <a href="javascrit:;" class="small-box-footer">管理员</a>
+                                    </div>
+                                  </div><!-- ./col -->
+                                  <div class="col-lg-3 col-xs-6">
+                                    <!-- small box -->
+                                    <div class="small-box bg-green">
+                                      <div class="inner">
+                                        <h3>{{mainData.regUsersCount}}</h3>
+                                      </div>
+                                      <div class="icon">
+                                        <i class="fa fa-fw fa-users"></i>
+                                      </div>
+                                      <a href="javascrit:;" class="small-box-footer">用户</a>
+                                    </div>
+                                  </div><!-- ./col -->
+                                  <div class="col-lg-3 col-xs-6">
+                                    <!-- small box -->
+                                    <div class="small-box bg-yellow">
+                                      <div class="inner">
+                                        <h3>{{mainData.contentsCount}}</h3>
+                                      </div>
+                                      <div class="icon">
+                                        <i class="fa fa-fw fa-file-text-o"></i>
+                                      </div>
+                                      <a href="javascrit:;" class="small-box-footer">文档</a>
+                                    </div>
+                                  </div><!-- ./col -->
+                                  <div class="col-lg-3 col-xs-6">
+                                    <!-- small box -->
+                                    <div class="small-box bg-red">
+                                      <div class="inner">
+                                        <h3>{{mainData.msgCount}}</h3>
+                                      </div>
+                                      <div class="icon">
+                                        <i class="fa fa-fw fa-comments-o"></i>
+                                      </div>
+                                      <a href="javascrit:;" class="small-box-footer">留言</a>
+                                    </div>
+                                  </div><!-- ./col -->
+                                </div>
                     </div><!-- /.box-body -->
                 </div><!-- /.box -->
             </div><!-- ./col -->

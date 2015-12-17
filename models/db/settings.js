@@ -10,7 +10,7 @@ module.exports = {
     debug: false,
     session_secret: 'lawrence_secret', // 务必修改
     auth_cookie_name: 'lawrencecms',
-    encrypt_key : 'dora',
+    encrypt_key : 'lawrence',
 //    数据库配置
     URL: 'mongodb://127.0.0.1:27017/lawrencecms',
     DB: 'lawrencecms',
@@ -21,8 +21,8 @@ module.exports = {
 
 
 //    站点基础信息配置
-    SITETITLE : 'lawrence', // 站点名称
-    SITEDOMAIN : 'http://www.lawrencecms.com', // 站点域名
+    SITETITLE : 'KU二手街', // 站点名称
+    SITEDOMAIN : 'http://www.lawrence.com', // 站点域名
     SITEICP : '#', // 站点备案号
     SITEVERSION : 'v1.0.9', // 静态资源版本戳
     SYSTEMMAIL : '494063570@qq.com', // 管理员个人邮箱
@@ -37,7 +37,7 @@ module.exports = {
     SITEBASICKEYWORDS : '', // 基础关键词
 
 
-    SYSTEMMANAGE : new Array('sysTemManage','DoraCMS后台管理'),  // 后台模块(系统管理)
+    SYSTEMMANAGE : new Array('sysTemManage','Lawrence后台管理'),  // 后台模块(系统管理)
     ADMINUSERLIST : new Array('sysTemManage_user','系统用户管理'),
     ADMINGROUPLIST : new Array('sysTemManage_uGroup','系统用户组管理'),
     ADSLIST : new Array('sysTemManage_ads','广告管理'),

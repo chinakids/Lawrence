@@ -61,7 +61,7 @@ var returnAdminRouter = function(io) {
 
     //管理员登录页面
     router.get('/', function(req, res, next) {
-        res.render('manage/adminLogin', { title: settings.SITETITLE , description : 'DoraCMS后台管理登录'});
+        res.render('manage/adminLogin', { title: settings.SITETITLE , description : 'Lawrence后台管理登录'});
     });
 
 
