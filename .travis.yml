@@ -4,10 +4,12 @@ os:
   - linux
   - osx
 node_js:
+  - '0.10'
   - '0.12'
-  - '4.2'
+  - '4.1'
 services:
   - mongodb
+  - redis
 before_script:
   - npm install
 script:
