@@ -1,0 +1,14 @@
+sudo: true
+language: node_js
+os:
+  - linux
+  - osx
+node_js:
+  - '0.12'
+  - '4.2'
+services:
+  - mongodb
+before_script:
+  - npm install
+script:
+  - npm start
