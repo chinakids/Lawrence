@@ -4,7 +4,7 @@
 
 
 module.exports={
-    cookieSecret:"lawrencecms",
-    db:"lawrencecms",
-    host:"localhost"
+  cookieSecret:"lawrencecms",
+  db:"lawrencecms",
+  host:"localhost"
 }

@@ -6,8 +6,8 @@ var _ = require('lodash');
  * @param key 键
  * @param callback 回调函数
  */
-var get = function (key, callback) {
-  redis.get(key, function (err, data) {
+var get = function(key, callback) {
+  redis.get(key, function(err, data) {
     if (err) {
       return callback(err);
     }
@@ -31,7 +31,7 @@ exports.get = get;
  * @param time 参数可选，毫秒为单位,切换为redis以秒为单位，除以1000
  * @param callback 回调函数
  */
-var set = function (key, value, time, callback) {
+var set = function(key, value, time, callback) {
   if (typeof time === 'function') {
     callback = time;
     time = null;

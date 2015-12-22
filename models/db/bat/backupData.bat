@@ -1,1 +1,1 @@
-mongodump -o "E:/mongodata/20150625095316"
+mongodump -o "/Users/admin/mongodb/bak/20150625095316"

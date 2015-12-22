@@ -8,19 +8,21 @@ var Schema = mongoose.Schema;
 
 
 var ContentTagsSchema = new Schema({
-    _id: {
-        type: String,
-        unique: true,
-        'default': shortid.generate
-    },
-    name:  String,
-    alias : String, //别名
-    date: { type: Date, default: Date.now },
-    comments : String
+  _id: {
+    type: String,
+    unique: true,
+    'default': shortid.generate
+  },
+  name: String,
+  alias: String, //别名
+  date: {
+    type: Date,
+    default: Date.now
+  },
+  comments: String
 });
 
 
-var ContentTags = mongoose.model("ContentTags",ContentTagsSchema);
+var ContentTags = mongoose.model("ContentTags", ContentTagsSchema);
 
 module.exports = ContentTags;
-

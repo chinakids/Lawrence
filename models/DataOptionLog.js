@@ -8,18 +8,24 @@ var Schema = mongoose.Schema;
 
 
 var DataOptionLogSchema = new Schema({
-    _id: {
-        type: String,
-        unique: true,
-        'default': shortid.generate
-    },
-    date: { type: Date, default: Date.now },
-    fileName : { type : String },
-    path : { type : String },
-    logs : String
+  _id: {
+    type: String,
+    unique: true,
+    'default': shortid.generate
+  },
+  date: {
+    type: Date,
+    default: Date.now
+  },
+  fileName: {
+    type: String
+  },
+  path: {
+    type: String
+  },
+  logs: String
 });
 
-var DataOptionLog = mongoose.model("DataOptionLog",DataOptionLogSchema);
+var DataOptionLog = mongoose.model("DataOptionLog", DataOptionLogSchema);
 
 module.exports = DataOptionLog;
-

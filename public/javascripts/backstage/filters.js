@@ -4,8 +4,8 @@
  */
 
 //html转义
-doraApp.filter('trustHtml', ['$sce',function ($sce) {
-    return function (input) {
-        return $sce.trustAsHtml(input);
-    }
+doraApp.filter('trustHtml', ['$sce', function($sce) {
+  return function(input) {
+    return $sce.trustAsHtml(input);
+  }
 }]);
