@@ -97,7 +97,6 @@ a{
     a:hover{
       li{
         background-color: @main;
-        box-shadow: @shadow;
         border-radius: 20px;
         color: @white;
       }
@@ -114,7 +113,7 @@ a{
     &:hover{
       border-color:@main;
       .btn span{
-      	color: @main;
+        color: @main;
       }
     }
     input{
@@ -143,7 +142,7 @@ a{
       background: transparent;
       border: none;
       &:hover span{
-      	color: @main;
+        color: @main;
       }
     }
   }
@@ -272,7 +271,7 @@ a{
         margin-top: -2px;
         margin-left: 4px;
         &:hover span{
-        	color: @main;
+          color: @main;
         }
       }
     }
@@ -315,379 +314,373 @@ a{
 }
 /*专题*/
 .topics-box{
-	padding:5px;
+  padding:5px;
   li{
-  	float: left;
-  	margin: 0 10px;
-  	width: 212px;
+    float: left;
+    margin: 0 10px;
+    width: 212px;
     img{
-    	width: 100%;
+      width: 100%;
     }
   }
 }
 
 /*瀑布*/
 .pubu{
-	padding:5px;
-}
-.pubu-wrap li{
-	float:left;
-	width:212px;
-}
-.pubu-wrap .pubu-img-box{
-	position: relative;
-	padding: 0;
-}
-.pubu-wrap .pubu-img,.pubu-wrap .pubu-img img{
-	width:100%;
-	display:block;
-}
-.pubu-img-name{
-	font-size:16px;
-	color:#222;
-}
-.pubu-sort{
-	color:#afafaf;
-	line-height:25px;
-  font-size: 12px;
-  margin: 5px 0;
-  i{
-    font-size: 14px;
-    margin-right:5px;
+  padding:5px;
+  .pubu-tips{
+    width:130px;
+    height:35px;
+    line-height:35px;
+    text-align:center;
+    color:@white;
+    background:rgb(68,181,223);
+    margin-left:auto;
+    margin-right:auto;
+    cursor:pointer;
+    border-radius: 36px;
   }
 }
-.pubu-num{
-	height: 30px;
-	line-height: 30px;
-	text-align: center;
-	color: @white;
-	position: absolute;
-	bottom: 0px;
-	right: 20px;
-}
-.pubu-num span{
-	background-image:url(../images/bg/bg-print.png);
-	background-repeat:no-repeat;
-	padding-left:20px;
-	font-family:Arial;
-}
-.pubu-num1{
-	background-position:0 -275px;
-	margin-right:20px;
-}
-.pubu-num2{
-	background-position:0 -301px;
-}
 .pubu-wrap{
-	position: relative;
+  position: relative;
+  li{
+    float:left;
+    width:212px;
+  }
+  .pubu-img-box{
+    position: relative;
+    padding: 0;
+  }
+  .pubu-img,.pubu-img img{
+    width:100%;
+    display:block;
+  }
+  .pubu-img-name{
+    font-size:16px;
+    color:#222;
+  }
+  .pubu-sort{
+    color:#afafaf;
+    line-height:25px;
+    font-size: 12px;
+    margin: 5px 0;
+    i{
+      font-size: 14px;
+      margin-right:5px;
+    }
+  }
+  .pubu-num{
+    height: 30px;
+    width: 100%;
+    line-height: 30px;
+    text-align: center;
+    color: @white;
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    margin: 0;
+    background: linear-gradient(bottom, rgba(0, 0, 0, .5) 0% ,rgba(0, 0, 0, .1) 70% ,rgba(0, 0, 0, 0) 100%);
+    background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, .5) 0% ,rgba(0, 0, 0, .1) 70% ,rgba(0, 0, 0, 0) 100%);
+    a{
+      color: @white;
+      padding-right: 10px;
+      float: right;
+      &:hover{
+        color:@red;
+        text-decoration: none;
+      }
+      i{
+        margin-right: 5px;
+      }
+    }
+  }
+  div{
+    padding:8px 15px;
+  }
+  li{
+    margin:0 10px 20px 10px;
+    position:absolute;
+    border:1px solid #eee;
+    /*  z-index: 9;  */
+    &.cur{
+      box-shadow:@shadowOut;
+    }
+    &.cur .pubu-img-name{
+      color:@main;
+    }
+  }
+  .pubu-method {
+    display:block;
+    margin-bottom:5px;
+    span{
+      width:30px;
+      display:block;
+      float:left;
+      background-repeat:no-repeat;
+      background-position:center center;
+      border-radius:30px;
+      overflow:hidden;
+      height:30px;
+      background-size: cover;
+    }
+    b{
+      color:#9e9e9e;
+      font-style:normal;
+      float:left;
+      margin-left:10px;
+      line-height:30px;
+    }
+  }
 }
-.pubu-wrap div{
-	padding:8px 20px;
-}
-.pubu-wrap li{
-	margin:0 10px 20px 10px;
-	position:absolute;
-	border:1px solid #eee;
-/*	z-index: 9;	*/
-}
-.pubu-wrap li.cur{
-	box-shadow:0 0 2px 2px #eee;
-}
-.pubu-wrap li.cur .pubu-img-name{
-	color:@main;
-}
-.pubu-num a{
-	color: @white;
-}
-.pubu-num a:hover{
-	text-decoration: none;
-}
-.pubu-num a.num1-hover:hover .pubu-num1{
-	background-position:0 -221px;
-}
-.pubu-num a.num2-hover:hover .pubu-num2{
-	background-position:0 -250px;
-}
-.pubu-method {
-	display:block;
-	margin-bottom:10px;
-}
-.pubu-method span{
-	width:30px;
-	display:block;
-	float:left;
-	background-repeat:no-repeat;
-	background-position:center center;
-	border-radius:30px;
-	overflow:hidden;
-	height:30px;
-	background-size: cover;
-}
-.pubu-method b{
-	color:#9e9e9e;
-	font-style:normal;
-	float:left;
-	margin-left:20px;
-	line-height:30px;
-}
-.pubu-tips{
-	width:130px;
-	height:35px;
-	line-height:35px;
-	text-align:center;
-	color:@white;
-	background:rgb(68,181,223);
-	margin-left:auto;
-	margin-right:auto;
-	cursor:pointer;
-	border-radius: 36px;
-}
+
+
+
 /*详情页*/
 .p-left{
-	width: 640px;
-	margin:0 10px;
+  width: 640px;
+  margin:0 10px;
 }
 .p-right{
-	width: 310px;
-	margin:0 10px;
+  width: 310px;
+  margin:0 10px;
 }
 .p-left-box{
-	padding: 20px;
-	float: left;
-	width: 640px;
-	display: inline;
-	box-shadow:0 0 2px 2px #eee;
-	margin-bottom:20px;
+  padding: 20px;
+  float: left;
+  width: 640px;
+  display: inline;
+  box-shadow:@shadowOut;
+  margin-bottom:20px;
 }
 .p-left-box .title{
-	height: 40px;
-	width: 100%;
-	line-height: 40px;
+  height: 40px;
+  width: 100%;
+  line-height: 40px;
 }
 .p-left-box .title .btn{
-	margin: 3px 5px;
+  margin: 3px 5px;
 }
 .p-left-box .bigimg-box{
-	width: 100%;
-	background-image:url(../images/bg/bg-w.png);
-	height: auto;
-	text-align: center;
-	margin: 10px 0;
+  width: 100%;
+  background-image:url(../images/bg/bg-w.png);
+  height: auto;
+  text-align: center;
+  margin: 10px 0;
 }
 .p-left-box .user-info{
-	height: auto;
-	width: 100%;
+  height: auto;
+  width: 100%;
 }
 .p-left-box .user-info img{
-	width: 50px;
-	height: 50px;
-	float: left;
-	margin-right: 10px;
+  width: 50px;
+  height: 50px;
+  float: left;
+  margin-right: 10px;
 }
 .p-left-box .user-info p{
-	line-height: 20px;
+  line-height: 20px;
 }
 .p-left-box .bigimg-box img{
-	max-width: 640px;
-	height: auto;
+  max-width: 640px;
+  height: auto;
 }
 .p-left-box .p-left-tip{
-	background: #eee;
-	padding: 10px;
-	margin: 0 auto;
-	margin-bottom: 10px;
+  background: #eee;
+  padding: 10px;
+  margin: 0 auto;
+  margin-bottom: 10px;
 }
 .p-left-box .p-left-re img{
-	width: 50px;
-	height: 50px;
-	float: left;
-	margin-right: 10px;
+  width: 50px;
+  height: 50px;
+  float: left;
+  margin-right: 10px;
 }
 .p-left-box .p-left-re textarea{
-	width: 540px;
-	height: 50px;
-	min-height: 50px;
-	float: left;
-	border: 1px solid #eee;
-	border-radius: 5px;
-	padding: 5px;
+  width: 540px;
+  height: 50px;
+  min-height: 50px;
+  float: left;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 5px;
 }
 .p-left-box .p-left-re .re-contorl{
-	width: 100%;
-	height: 40px;
-	line-height: 40px;
-	float: left;
-	margin: 10px 0;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  float: left;
+  margin: 10px 0;
 }
 .p-left-box .p-left-re .re-contorl .btn{
-	margin-top: 3px;
+  margin-top: 3px;
 }
 .p-left-re-list{
-	width: 600px;
-	border-top: 1px solid #eee;
+  width: 600px;
+  border-top: 1px solid #eee;
 }
 .p-left-re-list li{
-	margin: 10px 0;
-	position: relative;
+  margin: 10px 0;
+  position: relative;
 }
 .p-left-re-list .action-buttons{
-	visibility: hidden;
-	width: 80px;
-	height: 30px;
-	position: absolute;
-	right: 20px;
-	top: 14px;
+  visibility: hidden;
+  width: 80px;
+  height: 30px;
+  position: absolute;
+  right: 20px;
+  top: 14px;
 }
 .p-left-re-list .action-buttons a.reply-button{
-	float: right;
-	background: url('../images/ico/ico-comment.png') no-repeat scroll 0px 0px transparent;
-	width: 20px;
-	height: 20px;
-	cursor: pointer;
-	margin-left: 7px;
+  float: right;
+  background: url('../images/ico/ico-comment.png') no-repeat scroll 0px 0px transparent;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin-left: 7px;
 }
 .p-left-re-list .action-buttons a.reply-button:hover{
-	background-position: 0px -20px;
+  background-position: 0px -20px;
 }
 .p-left-re-list .action-buttons a.delete-button{
-	float: right;
-	background: url('../images/ico/ico-comment.png') no-repeat scroll -19px 0px transparent;
-	width: 20px;
-	height: 20px;
-	cursor: pointer;
-	margin-left: 7px;
+  float: right;
+  background: url('../images/ico/ico-comment.png') no-repeat scroll -19px 0px transparent;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin-left: 7px;
 }
 .p-left-re-list .action-buttons a.delete-button:hover{
-	background-position: -19px -20px;
+  background-position: -19px -20px;
 }
 .p-left-box .re-txt-box{
-	width: 540px;
+  width: 540px;
 }
 .p-left-box .re-txt-box p{
-	margin: 0;
-	line-height: 25px;
+  margin: 0;
+  line-height: 25px;
 }
 .p-left-box .re-txt-box p a,.p-left-box .re-txt-box p a:hover{
-	color: rgb(68,181,223);
+  color: rgb(68,181,223);
 }
 .p-right-box{
-	padding:10px;
-	float: left;
-	width: 310px;
-	margin-bottom:20px;
-	display: inline;
-	box-shadow:0 0 2px 2px #eee;
+  padding:10px;
+  float: left;
+  width: 310px;
+  margin-bottom:20px;
+  display: inline;
+  box-shadow:0 0 2px 2px #eee;
 
 }
 .p-right-box .user-info{
-	height: auto;
-	width: 100%;
+  height: auto;
+  width: 100%;
 }
 .p-right-box .user-info img{
-	width: 50px;
-	height: 50px;
-	float: left;
-	margin-right: 10px;
+  width: 50px;
+  height: 50px;
+  float: left;
+  margin-right: 10px;
 }
 .p-right-box .user-info p{
-	line-height: 20px;
+  line-height: 20px;
 }
 .p-right-box .title{
-	line-height: 33px;
-	margin-bottom: 10px;
+  line-height: 33px;
+  margin-bottom: 10px;
 }
 .sketchpad{
-	width: 100%;
-	height: auto;
+  width: 100%;
+  height: auto;
 }
 .sketchpad li{
-	float: left;
-	margin: 2px;
+  float: left;
+  margin: 2px;
 }
 .sketchpad li,.sketchpad li img{
-	width: 92px;
-	height: auto;
+  width: 92px;
+  height: auto;
 }
 .sketchpad a:hover img{
-	box-shadow:0 0 2px 2px #eee;
+  box-shadow:0 0 2px 2px #eee;
 }
 .p-right-box a.more{
-	width: 100%;
-	margin: 10px 0;
+  width: 100%;
+  margin: 10px 0;
 }
 .p-right-box .tag-list{
-	width: 100%;
-	height: auto;
+  width: 100%;
+  height: auto;
 }
 .p-right-box .tag-list li{
-	float: left;
-	margin: 5px;
+  float: left;
+  margin: 5px;
 }
 .p-right-box .tag-list li a{
-	padding: 3px 15px;
-	border-radius: 20px;
-	line-height: 20px;
-	background: rgb(68,181,223);
-	color: @white;
+  padding: 3px 15px;
+  border-radius: 20px;
+  line-height: 20px;
+  background: rgb(68,181,223);
+  color: @white;
 }
 .p-right-box .tag-list li a:hover{
-	text-decoration: none;
+  text-decoration: none;
 }
 .p-right-like-list li{
-	float: left;
-	margin: 10px;
+  float: left;
+  margin: 10px;
 }
 .p-right-like-list a:hover img{
-	box-shadow:0 0 2px 2px #eee;
+  box-shadow:0 0 2px 2px #eee;
 }
 .p-right-like-list li img{
-	width: 50px;
-	height: 50px;
+  width: 50px;
+  height: 50px;
 }
 .p-recommended{
-	width: 100%;
-	height: auto;
+  width: 100%;
+  height: auto;
 }
 .p-recommended .title{
-	line-height: 40px;
-	height: 40px;
-	border-bottom: 1px solid #eee;
-	margin-bottom: 15px;
+  line-height: 40px;
+  height: 40px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 15px;
 }
 
 /*画板单页*/
 .top-description{
-	width: 100%;
-	margin-bottom: 20px;
-	border:1px solid #eee;
-	box-shadow:0 0 2px 2px #eee;
+  width: 100%;
+  margin-bottom: 20px;
+  border:1px solid #eee;
+  box-shadow:0 0 2px 2px #eee;
 }
 .top-description .title{
-	width: 100%;
-	line-height: 40px;
-	padding: 10px;
+  width: 100%;
+  line-height: 40px;
+  padding: 10px;
 }
 .top-description .title .btn{
-	margin: 0 5px;
+  margin: 0 5px;
 }
 .top-description .description-main{
-	padding: 10px;
+  padding: 10px;
 }
 .top-description .description-main p{
-	line-height: 25px;
+  line-height: 25px;
 }
 .top-description .copy-user{
-	background: #fafafa;
-	width: 100%;
-	padding: 10px;
+  background: #fafafa;
+  width: 100%;
+  padding: 10px;
 }
 .top-description .copy-user img{
-	width: 40px;
-	height: 40px;
-	float: left;
-	margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  float: left;
+  margin-right: 10px;
 }
 .top-description .copy-user p{
-	line-height: 40px;
-	margin: 0;
+  line-height: 40px;
+  margin: 0;
 }
