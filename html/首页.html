@@ -5,6 +5,7 @@
   <title>首页</title>
   <meta name="renderer" content="webkit">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" href="resource/css/bootstrap.css">
   <!-- bower:css -->
   <link rel="stylesheet" href="resource/lib/Art-Reactor/dist/art-reactor.min.css" />
   <link rel="stylesheet" href="resource/lib/normalize-css/normalize.css" />
@@ -12,202 +13,296 @@
   <link rel="stylesheet" href="resource/css/common.min.css">
 </head>
 <body>
-  <!-- frame -->
-  <div class="container">
-     <header class="header">
-       <div class="logo"><img src="resource/image/Logo.png"></div>
-       <div class="head-nav">
-         <div class="search"></div>
-         <ul class="login">
-           <li><a href="">登陆</a></li>
-           <li><a href="">注册</a></li>
-         </ul>
-       </div>
-     </header>
-     <nav class="nav">
-       <ul>
-         <li><a href="">代步</a></li>
-         <li><a href="">手机</a></li>
-         <li><a href="">电脑</a></li>
-         <li><a href="">数码配件</a></li>
-         <li><a href="">数码</a></li>
-         <li><a href="">电器</a></li>
-         <li><a href="">运动健身</a></li>
-         <li><a href="">衣物伞帽</a></li>
-         <li><a href="">图书教材</a></li>
-         <li><a href="">租赁</a></li>
-         <li><a href="">生活娱乐</a></li>
-         <li><a href="">其他</a></li>
-       </ul>
-     </nav>
-     <div class="content">
-       <div class="content-box">
-         <!-- 这里是专题 -->
-         <ul class="top-bar">
-           <li></li>
-         </ul>
-         <!-- 瀑布流展示 -->
-         <ul class="waterfall">
-          <li class="waterfall-card">
-            <img src="resource/image/test/01.png" alt="">
-            <p>这里是商品的标题</p>
-            <p><span>喜欢</span><span>收藏</span><span>购买</span></p>
-          </li>
-          <li class="waterfall-card">
-            <img src="resource/image/test/02.jpg" alt="">
-            <p>这里是商品的标题</p>
-            <p><span>喜欢</span><span>收藏</span><span>购买</span></p>
-          </li>
-          <li class="waterfall-card">
-            <img src="resource/image/test/03.jpg" alt="">
-            <p>这里是商品的标题</p>
-            <p><span>喜欢</span><span>收藏</span><span>购买</span></p>
-          </li>
-          <li class="waterfall-card">
-            <img src="resource/image/test/06.png" alt="">
-            <p>这里是商品的标题</p>
-            <p><span>喜欢</span><span>收藏</span><span>购买</span></p>
-          </li>
-          <li class="waterfall-card">
-            <img src="resource/image/test/05.jpg" alt="">
-            <p>这里是商品的标题</p>
-            <p><span>喜欢</span><span>收藏</span><span>购买</span></p>
-          </li>
-          <li class="waterfall-card">
-            <img src="resource/image/test/06.png" alt="">
-            <p>这里是商品的标题</p>
-            <p><span>喜欢</span><span>收藏</span><span>购买</span></p>
-          </li>
-          <li class="waterfall-card">
-            <img src="resource/image/test/03.jpg" alt="">
-            <p>这里是商品的标题</p>
-            <p><span>喜欢</span><span>收藏</span><span>购买</span></p>
-          </li>
-          <li class="waterfall-card">
-            <img src="resource/image/test/04.jpg" alt="">
-            <p>这里是商品的标题</p>
-            <p><span>喜欢</span><span>收藏</span><span>购买</span></p>
-          </li>
-          <li class="waterfall-card">
-            <img src="resource/image/test/02.jpg" alt="">
-            <p>这里是商品的标题</p>
-            <p><span>喜欢</span><span>收藏</span><span>购买</span></p>
-          </li>
-          <li class="waterfall-card">
-            <img src="resource/image/test/01.png" alt="">
-            <p>这里是商品的标题</p>
-            <p><span>喜欢</span><span>收藏</span><span>购买</span></p>
-          </li>
-          <li class="waterfall-card">
-            <img src="resource/image/test/01.png" alt="">
-            <p>这里是商品的标题</p>
-            <p><span>喜欢</span><span>收藏</span><span>购买</span></p>
-          </li>
-          <li class="waterfall-card">
-            <img src="resource/image/test/02.jpg" alt="">
-            <p>这里是商品的标题</p>
-            <p><span>喜欢</span><span>收藏</span><span>购买</span></p>
-          </li>
-          <li class="waterfall-card">
-            <img src="resource/image/test/03.jpg" alt="">
-            <p>这里是商品的标题</p>
-            <p><span>喜欢</span><span>收藏</span><span>购买</span></p>
-          </li>
-          <li class="waterfall-card">
-            <img src="resource/image/test/06.png" alt="">
-            <p>这里是商品的标题</p>
-            <p><span>喜欢</span><span>收藏</span><span>购买</span></p>
-          </li>
-          <li class="waterfall-card">
-            <img src="resource/image/test/05.jpg" alt="">
-            <p>这里是商品的标题</p>
-            <p><span>喜欢</span><span>收藏</span><span>购买</span></p>
-          </li>
-          <li class="waterfall-card">
-            <img src="resource/image/test/06.png" alt="">
-            <p>这里是商品的标题</p>
-            <p><span>喜欢</span><span>收藏</span><span>购买</span></p>
-          </li>
-          <li class="waterfall-card">
-            <img src="resource/image/test/03.jpg" alt="">
-            <p>这里是商品的标题</p>
-            <p><span>喜欢</span><span>收藏</span><span>购买</span></p>
-          </li>
-          <li class="waterfall-card">
-            <img src="resource/image/test/04.jpg" alt="">
-            <p>这里是商品的标题</p>
-            <p><span>喜欢</span><span>收藏</span><span>购买</span></p>
-          </li>
-          <li class="waterfall-card">
-            <img src="resource/image/test/02.jpg" alt="">
-            <p>这里是商品的标题</p>
-            <p><span>喜欢</span><span>收藏</span><span>购买</span></p>
-          </li>
-          <li class="waterfall-card">
-            <img src="resource/image/test/01.png" alt="">
-            <p>这里是商品的标题</p>
-            <p><span>喜欢</span><span>收藏</span><span>购买</span></p>
-          </li>
-          <li class="waterfall-card">
-            <img src="resource/image/test/01.png" alt="">
-            <p>这里是商品的标题</p>
-            <p><span>喜欢</span><span>收藏</span><span>购买</span></p>
-          </li>
-          <li class="waterfall-card">
-            <img src="resource/image/test/02.jpg" alt="">
-            <p>这里是商品的标题</p>
-            <p><span>喜欢</span><span>收藏</span><span>购买</span></p>
-          </li>
-          <li class="waterfall-card">
-            <img src="resource/image/test/03.jpg" alt="">
-            <p>这里是商品的标题</p>
-            <p><span>喜欢</span><span>收藏</span><span>购买</span></p>
-          </li>
-          <li class="waterfall-card">
-            <img src="resource/image/test/06.png" alt="">
-            <p>这里是商品的标题</p>
-            <p><span>喜欢</span><span>收藏</span><span>购买</span></p>
-          </li>
-          <li class="waterfall-card">
-            <img src="resource/image/test/05.jpg" alt="">
-            <p>这里是商品的标题</p>
-            <p><span>喜欢</span><span>收藏</span><span>购买</span></p>
-          </li>
-          <li class="waterfall-card">
-            <img src="resource/image/test/06.png" alt="">
-            <p>这里是商品的标题</p>
-            <p><span>喜欢</span><span>收藏</span><span>购买</span></p>
-          </li>
-          <li class="waterfall-card">
-            <img src="resource/image/test/03.jpg" alt="">
-            <p>这里是商品的标题</p>
-            <p><span>喜欢</span><span>收藏</span><span>购买</span></p>
-          </li>
-          <li class="waterfall-card">
-            <img src="resource/image/test/04.jpg" alt="">
-            <p>这里是商品的标题</p>
-            <p><span>喜欢</span><span>收藏</span><span>购买</span></p>
-          </li>
-          <li class="waterfall-card">
-            <img src="resource/image/test/02.jpg" alt="">
-            <p>这里是商品的标题</p>
-            <p><span>喜欢</span><span>收藏</span><span>购买</span></p>
-          </li>
-          <li class="waterfall-card">
-            <img src="resource/image/test/01.png" alt="">
-            <p>这里是商品的标题</p>
-            <p><span>喜欢</span><span>收藏</span><span>购买</span></p>
-          </li>
-        </ul>
-       </div>
-     </div>
+  <div class="wrapper top-box blur">
+    <div class="container">
+      <div class="top-logo" title="logo">
+        <a href="/"><span class="logo"></span></a>
+        <span class="sublogo"></span>
+      </div>
+      <ul class="top-menu">
+        <li title="分类"><i class="ar ar-list-recorder"></i></li>
+      </ul>
+      <ul class="top-user">
+        <li><a href="#">登陆</a></li>
+        <li><a href="#">注册</a></li>
+      </ul>
+      <div class="top-search">
+        <input type="text" placeholder="搜索...">
+        <button type="button" class="btn btn-xs">
+          <span class="ar ar-seach"></span>
+        </button>
+      </div>
+    </div>
   </div>
+  <div class="wrapper">
+    <div class="banner" style="background-image:url(resource/images/eq/banner.jpg)">
+      <div class="search-box">
+        <h3 style="background-image:url(resource/images/logo/title.png)"></h3>
+        <div class="search">
+          <input type="text" placeholder="搜索您所需要的...">
+          <button type="button" class="btn btn-xs">
+            <span class="ar ar-seach"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper" style="padding-top:10px;">
+      <div class="container">
+        <div class="topics-box clearfix">
+          <ul>
+            <li><a href="#"><img src="resource/images/eq/zhuanti.jpg" alt=""></a></li>
+            <li><a href="#"><img src="resource/images/eq/zhuanti.jpg" alt=""></a></li>
+            <li><a href="#"><img src="resource/images/eq/zhuanti.jpg" alt=""></a></li>
+            <li><a href="#"><img src="resource/images/eq/zhuanti.jpg" alt=""></a></li>
+            <li><a href="#"><img src="resource/images/eq/zhuanti.jpg" alt=""></a></li>
+          </ul>
+        </div>
+    <div class="pubu">
+      <ul class="pubu-wrap clearfix js-pubu">
+        <li>
+          <div class="pubu-img-box">
+          <a href="#" class="pubu-img"><img src="resource/images/eq/eq-head.png"/>
+          </a>
+          <p class="pubu-num">
+            <a href="javascript:;" class="num1-hover"><span class="pubu-num1">18</span></a>
+            <a href="javascript:;" class="num2-hover"><span class="pubu-num2">30</span></a>
+          </p>
+          </div>
+          <div>
+            <a href="#" class="pubu-img-name">激情畅想“青春派“威丝曼</a>
+            <p class="pubu-sort"><i class="ar ar-location"></i>KU劳伦斯校区</p>
+            <a href="#" class="pubu-method clearfix"><span style="background-image:url(resource/images/eq/bg-small-head.png);"></span><b>莫小夕</b></a>
+          </div>
+        </li>
+        <li>
+          <div class="pubu-img-box">
+          <a href="#" class="pubu-img"><img src="resource/images/eq/pubu4.png"/>
+            </a>
+          <p class="pubu-num">
+            <a href="javascript:;" class="num1-hover"><span class="pubu-num1">18</span></a>
+            <a href="javascript:;" class="num2-hover"><span class="pubu-num2">30</span></a>
+          </p>
+          </div>
+          <div>
+            <a href="#" class="pubu-img-name">激情畅想“青春派“威丝曼</a>
+            <p class="pubu-sort"><i class="ar ar-location"></i>KU劳伦斯校区</p>
 
+            <a href="#" class="pubu-method clearfix"><span style="background-image:url(resource/images/eq/bg-small-head.png);"></span><b>莫小夕</b></a>
+          </div>
+        </li>
+        <li>
+        <div class="pubu-img-box">
+          <a href="#" class="pubu-img"><img src="resource/images/eq/pubu2.png"/>
+          </a>
+          <p class="pubu-num">
+            <a href="javascript:;" class="num1-hover"><span class="pubu-num1">18</span></a>
+            <a href="javascript:;" class="num2-hover"><span class="pubu-num2">30</span></a>
+          </p>
+          </div>
+          <div>
+            <a href="#" class="pubu-img-name">激情畅想“青春派“威丝曼</a>
+            <p class="pubu-sort"><i class="ar ar-location"></i>KU劳伦斯校区</p>
+            <a href="#" class="pubu-method clearfix"><span style="background-image:url(resource/images/eq/bg-small-head.png);"></span><b>莫小夕</b></a>
+          </div>
+        </li>
+        <li>
+        <div class="pubu-img-box">
+          <a href="#" class="pubu-img"><img src="resource/images/eq/eq-head.png"/>
+            </a>
+          <p class="pubu-num">
+            <a href="javascript:;" class="num1-hover"><span class="pubu-num1">18</span></a>
+            <a href="javascript:;" class="num2-hover"><span class="pubu-num2">30</span></a>
+          </p>
+          </div>
+          <div>
+            <a href="#" class="pubu-img-name">激情畅想“青春派“威丝曼</a>
+            <p class="pubu-sort"><i class="ar ar-location"></i>KU劳伦斯校区</p>
+            <a href="#" class="pubu-method clearfix"><span style="background-image:url(resource/images/eq/bg-small-head.png);"></span><b>莫小夕</b></a>
+          </div>
+        </li>
+        <li>
+        <div class="pubu-img-box">
+          <a href="#" class="pubu-img"><img src="resource/images/eq/eq-pubu1.png"/>
+            </a>
+          <p class="pubu-num">
+            <a href="javascript:;" class="num1-hover"><span class="pubu-num1">18</span></a>
+            <a href="javascript:;" class="num2-hover"><span class="pubu-num2">30</span></a>
+          </p>
+          </div>
+          <div>
+            <a href="#" class="pubu-img-name">激情畅想“青春派“威丝曼</a>
+            <p class="pubu-sort"><i class="ar ar-location"></i>KU劳伦斯校区</p>
+
+            <a href="#" class="pubu-method clearfix"><span style="background-image:url(resource/images/eq/bg-small-head.png);"></span><b>莫小夕</b></a>
+          </div>
+        </li>
+        <li>
+        <div class="pubu-img-box">
+          <a href="#" class="pubu-img"><img src="resource/images/eq/eq-head.png"/>
+            </a>
+          <p class="pubu-num">
+            <a href="javascript:;" class="num1-hover"><span class="pubu-num1">18</span></a>
+            <a href="javascript:;" class="num2-hover"><span class="pubu-num2">30</span></a>
+          </p>
+          </div>
+          <div>
+            <a href="#" class="pubu-img-name">激情畅想“青春派“威丝曼</a>
+            <p class="pubu-sort"><i class="ar ar-location"></i>KU劳伦斯校区</p>
+
+            <a href="#" class="pubu-method clearfix"><span style="background-image:url(resource/images/eq/bg-small-head.png);"></span><b>莫小夕</b></a>
+          </div>
+        </li>
+        <li>
+        <div class="pubu-img-box">
+          <a href="#" class="pubu-img"><img src="resource/images/eq/pubu4.png"/>
+            </a>
+          <p class="pubu-num">
+            <a href="javascript:;" class="num1-hover"><span class="pubu-num1">18</span></a>
+            <a href="javascript:;" class="num2-hover"><span class="pubu-num2">30</span></a>
+          </p>
+          </div>
+          <div>
+            <a href="#" class="pubu-img-name">激情畅想“青春派“威丝曼</a>
+            <p class="pubu-sort"><i class="ar ar-location"></i>KU劳伦斯校区</p>
+
+            <a href="#" class="pubu-method clearfix"><span style="background-image:url(resource/images/eq/bg-small-head.png);"></span><b>莫小夕</b></a>
+          </div>
+        </li>
+        <li>
+        <div class="pubu-img-box">
+          <a href="#" class="pubu-img"><img src="resource/images/eq/pubu2.png"/>
+            </a>
+          <p class="pubu-num">
+            <a href="javascript:;" class="num1-hover"><span class="pubu-num1">18</span></a>
+            <a href="javascript:;" class="num2-hover"><span class="pubu-num2">30</span></a>
+          </p>
+          </div>
+          <div>
+            <a href="#" class="pubu-img-name">激情畅想“青春派“威丝曼</a>
+            <p class="pubu-sort"><i class="ar ar-location"></i>KU劳伦斯校区</p>
+
+            <a href="#" class="pubu-method clearfix"><span style="background-image:url(resource/images/eq/bg-small-head.png);"></span><b>莫小夕</b></a>
+          </div>
+        </li>
+        <li>
+        <div class="pubu-img-box">
+          <a href="#" class="pubu-img"><img src="resource/images/eq/eq-head.png"/>
+            </a>
+          <p class="pubu-num">
+            <a href="javascript:;" class="num1-hover"><span class="pubu-num1">18</span></a>
+            <a href="javascript:;" class="num2-hover"><span class="pubu-num2">30</span></a>
+          </p>
+          </div>
+          <div>
+            <a href="#" class="pubu-img-name">激情畅想“青春派“威丝曼</a>
+            <p class="pubu-sort"><i class="ar ar-location"></i>KU劳伦斯校区</p>
+
+            <a href="#" class="pubu-method clearfix"><span style="background-image:url(resource/images/eq/bg-small-head.png);"></span><b>莫小夕</b></a>
+          </div>
+        </li>
+        <li>
+        <div class="pubu-img-box">
+          <a href="#" class="pubu-img"><img src="resource/images/eq/eq-pubu1.png"/>
+          </a>
+          <p class="pubu-num">
+            <a href="javascript:;" class="num1-hover"><span class="pubu-num1">18</span></a>
+            <a href="javascript:;" class="num2-hover"><span class="pubu-num2">30</span></a>
+          </p>
+          </div>
+          <div>
+            <a href="#" class="pubu-img-name">激情畅想“青春派“威丝曼</a>
+            <p class="pubu-sort"><i class="ar ar-location"></i>KU劳伦斯校区</p>
+
+            <a href="#" class="pubu-method clearfix"><span style="background-image:url(resource/images/eq/bg-small-head.png);"></span><b>莫小夕</b></a>
+          </div>
+        </li>
+        <li>
+        <div class="pubu-img-box">
+          <a href="#" class="pubu-img"><img src="resource/images/eq/pubu4.png"/>
+            </a>
+          <p class="pubu-num">
+            <a href="javascript:;" class="num1-hover"><span class="pubu-num1">18</span></a>
+            <a href="javascript:;" class="num2-hover"><span class="pubu-num2">30</span></a>
+          </p>
+          </div>
+          <div>
+            <a href="#" class="pubu-img-name">激情畅想“青春派“威丝曼</a>
+            <p class="pubu-sort"><i class="ar ar-location"></i>KU劳伦斯校区</p>
+
+            <a href="#" class="pubu-method clearfix"><span style="background-image:url(resource/images/eq/bg-small-head.png);"></span><b>莫小夕</b></a>
+          </div>
+        </li>
+        <li>
+        <div class="pubu-img-box">
+          <a href="#" class="pubu-img"><img src="resource/images/eq/pubu2.png"/>
+            </a>
+          <p class="pubu-num">
+            <a href="javascript:;" class="num1-hover"><span class="pubu-num1">18</span></a>
+            <a href="javascript:;" class="num2-hover"><span class="pubu-num2">30</span></a>
+          </p>
+          </div>
+          <div>
+            <a href="#" class="pubu-img-name">激情畅想“青春派“威丝曼</a>
+            <p class="pubu-sort"><i class="ar ar-location"></i>KU劳伦斯校区</p>
+
+            <a href="#" class="pubu-method clearfix"><span style="background-image:url(resource/images/eq/bg-small-head.png);"></span><b>莫小夕</b></a>
+          </div>
+        </li>
+      </ul>
+      <div class="t-center pubu-tips">加载更多...</div>
+    </div>
+    <!-- page -->
+    <ul class="pagination clearfix">
+      <li>
+        <a href="">首页</a>
+      </li>
+      <li>
+        <a href="">上一页</a>
+      </li>
+      <li class="active">
+        <a href="#">1</a>
+      </li>
+      <li>
+        <a href="#">2</a>
+      </li>
+      <li>
+        <a href="#">3</a>
+      </li>
+      <li>
+        <a href="#">4</a>
+      </li>
+      <li>
+        <a href="#">5</a>
+      </li>
+      <li>
+        <a href="javascript:;">···</a>
+      </li>
+      <li>
+        <a href="#">99</a>
+      </li>
+      <li>
+        <a href="">下一页</a>
+      </li>
+      <li>
+        <a href="">尾页</a>
+      </li>
+    </ul>
+  </div>
+  </div>
+  <div class="wrapper footer">
+      <div class="container clearfix">
+          <img src="#" alt="logo" class="foot-logo" />
+          <div class="foot-nav">
+              <a href="">反馈建议</a> | <a href="">联系我们</a> | <a href="">使用条款</a> | <a href="">隐私和 Cookie</a> | <a href="">鄂 ICP备XXXXXXXXX号</a><br />
+              <p>CopyRight © 2014 OTAKU Rights Resverved.</p>
+          </div>
+      </div>
+  </div>
 </body>
 <!-- bower:js -->
 <script src="resource/lib/jquery/dist/jquery.js"></script>
-<script src="resource/lib/bootstrap/dist/js/bootstrap.js"></script>
 <!-- endbower -->
-<script src="resource/js/waterfall.js"></script>
+<script src="resource/js/jquery.masonry.js"></script>
 <script src="resource/js/common.js"></script>
 </html>

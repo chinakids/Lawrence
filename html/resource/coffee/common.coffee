@@ -1,16 +1,17 @@
 $ () ->
-  WH = $(window).height()
-  #设置侧边栏的高度
-  $('.nav').height(WH);
-  #初始化瀑布流
-  waterfall = new Waterfall
-    test : false
-    between : 25
-    boxDom : '.waterfall-card'
+  # .js-pubu 为包含所有图片的容器
+  waterfall = $('.js-pubu')
+  waterfall.masonry
+    itemSelector : '.js-pubu li'
 
-  #滚动判断
+  #鼠标移入瀑布流效果
+  $('.js-pubu li').hover () ->
+    $(@).addClass 'cur'
+  ,() ->
+    $(@).removeClass 'cur'
+
   $(window).scroll () ->
-    if $(document).scrollTop() >= 30
-      $('.header,.nav,.content').addClass('mini')
+    if $(document).scrollTop() >= 280
+      $('.top-box').removeClass('blur')
     else
-      $('.header,.nav,.content').removeClass('mini')
+      $('.top-box').addClass('blur')
