@@ -55,6 +55,10 @@ var ContentSchema = new Schema({
     type: Number,
     default: 1
   },
+  sellState:{
+    type: Number,
+    default: 0
+  },//交易状态 0为待售 1为售出
   comments: {},
   commentNum: {
     type: Number,

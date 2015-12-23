@@ -1,3 +1,3 @@
 /*! Lawrence - v1.0.9 - 2015-12-22 */
-(function(){$(function(){var a;return a=$(".js-pubu"),a.masonry({itemSelector:".js-pubu li"}),$(".js-pubu li").hover(function(){return $(this).addClass("cur")},function(){return $(this).removeClass("cur")}),$(window).scroll(function(){return $(document).scrollTop()>=280?$(".top-box").removeClass("blur"):$(".top-box").addClass("blur")})})}).call(this);
+(function(){$(function(){return $(".js-pubu").waterfall({debug:!1,itemCls:"waterfall-item",colWidth:212,loadingMsg:'<div class="t-center pubu-tips">加载更多...</div>'}),$(".js-pubu li").hover(function(){return $(this).addClass("cur")},function(){return $(this).removeClass("cur")}),$(window).scroll(function(){return $(document).scrollTop()>=280?$(".top-box").removeClass("blur"):$(".top-box").addClass("blur")})})}).call(this);
 //# sourceMappingURL=common.js.map
