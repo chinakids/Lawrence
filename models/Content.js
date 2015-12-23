@@ -15,7 +15,6 @@ var ContentSchema = new Schema({
     'default': shortid.generate
   },
   title: String,
-  stitle: String,
   type: {
     type: String,
     default: "content"
@@ -43,6 +42,9 @@ var ContentSchema = new Schema({
   author: {
     type: String
   },
+  authorLogo:{
+    type: String
+  },
   state: {
     type: Boolean,
     default: true
@@ -59,6 +61,12 @@ var ContentSchema = new Schema({
     type: Number,
     default: 0
   },//交易状态 0为待售 1为售出
+  phone:{
+    type: String
+  },
+  location:{
+    type: String
+  },
   comments: {},
   commentNum: {
     type: Number,
@@ -69,10 +77,10 @@ var ContentSchema = new Schema({
     default: 0
   }, // 喜欢数
   likeUserIds: String, // 喜欢该文章的用户ID集合
-  from: {
-    type: String,
-    default: '1'
-  }
+  // from: {
+  //   type: String,
+  //   default: '1'
+  // }
 });
 
 
@@ -113,7 +121,7 @@ ContentSchema.statics = {
     Content
       .find({state:true})
       .populate('contentTemp')
-      .sort('-updateDate')
+      .sort('-date')
       .skip(page * pageLen)
       .limit(pageLen)
       .exec(function(err, result) {

@@ -393,6 +393,7 @@ var returnAdminRouter = function(io) {
         addOneCategory(req, res)
       } else if (targetObj == Content) {
         req.body.author = req.session.adminUserInfo.name;
+        req.body.authorLogo = req.session.adminUserInfo.logo;
         DbOpt.addOne(targetObj, req, res);
       } else if (targetObj == ContentTags) {
         addOneContentTags(req, res)
@@ -727,7 +728,7 @@ var returnAdminRouter = function(io) {
     var targetPath;
 
     if (contentType == "plug") {
-      targetPath = 'manage/addPlugs';
+      //targetPath = 'manage/addPlugs';
     } else {
       targetPath = 'manage/addContent';
     }

@@ -23,7 +23,12 @@ var cache = require('../util/cache');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.send('API状态正常')
+  res.send(
+    'API状态正常'+
+    '<ul>'+
+    '<li><a href="/api/pagination?page=1&pageLen=2" target="_blank">/api/pagination</a> (GET:page,pageLen)</li>'+
+    '</ul>'
+  );
 });
 //分页获取
 router.get('/pagination', function(req, res, next) {
@@ -40,8 +45,6 @@ router.get('/pagination', function(req, res, next) {
       })
     })
   })
-
-
 });
 
 // //缓存站点地图
