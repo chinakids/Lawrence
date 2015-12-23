@@ -49,12 +49,8 @@ var fs = require('fs');
 var http = require('http');
 var request = require('request');
 /* GET home page. */
-
-var PW = require('png-word');
-var RW = require('../util/randomWord');
-var rw = RW('abcdefghijklmnopqrstuvwxyz1234567890');
-var pngword = new PW(PW.GRAY);
-
+//ccap验证码
+var ccap = require('ccap');
 
 
 var returnAdminRouter = function(io) {
@@ -69,11 +65,23 @@ var returnAdminRouter = function(io) {
 
 
   //管理员登录验证码
-  router.get('/vnum', function(req, res) {
+  // router.get('/ccap', function(req, res) {
+  //   var word = rw.random(4);
+  //   req.session.ccap = word;
+  //   pngword.createReadStream(word).pipe(res);
+  // });
 
-    var word = rw.random(4);
-    req.session.vnum = word;
-    pngword.createReadStream(word).pipe(res);
+  router.get('/ccap', function(req, res) {
+    var captcha = ccap({
+      'width':214,
+      'height':68,
+      'offset':30
+    });
+    var ary = captcha.get();//ary[0] is captcha's text,ary[1] is captcha picture buffer.
+    req.session.ccap = ary[0];
+    console.log(ary[0])
+    var buffer = ary[1];
+    res.end(buffer);
   });
 
 
@@ -82,10 +90,10 @@ var returnAdminRouter = function(io) {
   router.post('/doLogin', function(req, res, next) {
     var userName = req.body.userName;
     var password = req.body.password;
-    var vnum = req.body.vnum;
+    var ccap = req.body.ccap;
     var newPsd = DbOpt.encrypt(password, settings.encrypt_key);
 
-    if (vnum != req.session.vnum) {
+    if (ccap != req.session.ccap) {
       res.end('验证码有误！');
     } else {
       if (validator.isUserName(userName) && validator.isPsd(password)) {
