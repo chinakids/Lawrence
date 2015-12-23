@@ -31,7 +31,6 @@ var AdminUserSchema = new Schema({
   group: {
     type: String,
     ref: 'AdminGroup'
-
   }
 });
 
