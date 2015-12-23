@@ -50,7 +50,12 @@ var http = require('http');
 var request = require('request');
 /* GET home page. */
 //ccap验证码
-var ccap = require('ccap');
+var ccap = require('ccap')({
+  'width':214,
+  'height':68,
+  'offset':30,
+  'fontsize':45
+});
 
 
 var returnAdminRouter = function(io) {
@@ -72,28 +77,22 @@ var returnAdminRouter = function(io) {
   // });
 
   router.get('/ccap', function(req, res) {
-    var captcha = ccap({
-      'width':214,
-      'height':68,
-      'offset':30
-    });
-    var ary = captcha.get();//ary[0] is captcha's text,ary[1] is captcha picture buffer.
+    //var captcha = ccap();
+    var ary = ccap.get();
     req.session.ccap = ary[0];
-    console.log(ary[0])
     var buffer = ary[1];
     res.end(buffer);
   });
-
-
 
   // 管理员登录提交请求
   router.post('/doLogin', function(req, res, next) {
     var userName = req.body.userName;
     var password = req.body.password;
-    var ccap = req.body.ccap;
+    var code = req.body.ccap.toUpperCase();
+
     var newPsd = DbOpt.encrypt(password, settings.encrypt_key);
 
-    if (ccap != req.session.ccap) {
+    if (code != req.session.ccap) {
       res.end('验证码有误！');
     } else {
       if (validator.isUserName(userName) && validator.isPsd(password)) {
