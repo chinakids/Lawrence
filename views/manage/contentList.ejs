@@ -38,12 +38,12 @@
                         <td><input type="checkbox" name="listItem" class="mini" value="{{content._id}}" ng-click="getNewIds()"/></td>
 
                         <td ng-switch on="content.type">
-                            <span ng-switch-when="content"><a href="/details/{{content._id}}.html" target="_blank">{{content.title}}</a></span>
-                            <span ng-switch-when="plug"><a href="/details/{{content._id}}.html" target="_blank">{{content.title}}</a></span>
-                            <span ng-switch-default>{{content.title}}</span>
+                            <span ng-switch-when="content"><a href="/details/{{content._id}}.html" target="_blank" ng-bind="content.title"></a></span>
+                            <span ng-switch-when="plug"><a href="/details/{{content._id}}.html" target="_blank" ng-bind="content.title"></a></span>
+                            <span ng-switch-default ng-bind="content.title"></span>
                         </td>
-                        <td>{{content.date | date : "yyyy-MM-dd HH:mm:ss"}}</td>
-                        <td>{{content.category.name}}</td>
+                        <td ng-bind="content.date | date : 'yyyy-MM-dd HH:mm:ss'"></td>
+                        <td ng-bind="content.category.name"></td>
                         <td ng-switch on="content.from">
                             <span ng-switch-when="1">原创</span>
                             <span ng-switch-when="2">转载</span>
@@ -54,12 +54,12 @@
                             <span ng-switch-when="singer">其它</span>
                         </td>
                         <td ng-class="{true:'text-danger'}[content.isTop==1]"><i class="fa fa-fw fa-flag"></i></td>
-                        <td>{{content.clickNum}}</td>
+                        <td ng-bind="content.clickNum"></td>
                         <td ng-switch on="content.state">
                             <span ng-switch-when="true"><a href="" class="label label-success">true</a></span>
                             <span ng-switch-when="false"><a href="" class="label label-danger">false</a></span>
                         </td>
-                        <td>{{content.author}}</td>
+                        <td ng-bind="content.author"></td>
                         <td>
                             <a href="/admin/manage/content/edit/{{content.type}}/{{content._id}}" role="button"  title="编辑" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></a>
                             <a href="###" role="button"  title="推荐" ng-click="topContent(content._id,1)" class="btn btn-warning btn-xs" ng-show="content.isTop == 0"><i class="fa fa-thumbs-o-up"></i></a>

@@ -15,8 +15,8 @@
                 </tr>
                 <tr class="datalist" ng-repeat="group in data">
                     <td><input type="checkbox" name="listItem" class="mini" value="{{group._id}}" ng-click="getNewIds()"/></td>
-                    <td class="  sorting_1">{{group.name}}</td>
-                    <td class=" " title="{{group.power}}">{{group.power | limitTo : 80}}</td>
+                    <td class="  sorting_1" ng-bind="group.name"></td>
+                    <td class=" " title="{{group.power}}" ng-bind="group.power | limitTo : 80"></td>
                     <td class=" ">
                         <button class="btn btn-primary btn-xs" data-whatever="{{group._id}}" data-toggle="modal" data-target="#addAdminGroup"><span class="fa fa-fw fa-edit" aria-hidden="true"></span>编辑</button>&nbsp;
                         <button class="btn btn-default btn-xs" ng-click="delOneItem(group._id)"><span class="fa fa-fw fa-trash-o" aria-hidden="true"></span>删除</button>

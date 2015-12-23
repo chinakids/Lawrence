@@ -20,9 +20,9 @@
                 </tr>
                 <tr class="datalist" ng-repeat="tag in data">
                     <td><input type="checkbox" name="listItem" class="mini" value="{{tag._id}}" ng-click="getNewIds()"/></td>
-                    <td class="  sorting_1">{{tag.name}}</td>
-                    <td class=" ">{{tag.alias}}</td>
-                    <td class=" ">{{tag.comments}}</td>
+                    <td class="  sorting_1" ng-bind="tag.name"></td>
+                    <td class=" " ng-bind="tag.alias"></td>
+                    <td class=" " ng-bind="tag.comments"></td>
                     <td class=" ">
                         <button class="btn btn-primary btn-xs" data-whatever="{{tag._id}}" data-toggle="modal" data-target="#addContentTags"><span class="fa fa-fw fa-edit" aria-hidden="true"></span>编辑</button>&nbsp;
                         <button class="btn btn-default btn-xs" ng-click="delOneItem(tag._id)"><span class="fa fa-fw fa-trash-o" aria-hidden="true"></span>删除</button>
@@ -79,4 +79,3 @@
  </div><!-- /.row -->
 
 </div>
-

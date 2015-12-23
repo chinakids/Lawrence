@@ -17,18 +17,18 @@
 
                     <tr ng-repeat="msgs in data">
                         <td><input type="checkbox" class="mini"/></td>
-                        <td class="  sorting_1"><a href="/details/{{msgs.contentId}}.html" target="_blank">{{msgs.contentTitle | limitTo : 20}}</a></td>
-                        <td class=" ">{{msgs.content | limitTo : 50}}</td>
+                        <td class="  sorting_1"><a href="/details/{{msgs.contentId}}.html" target="_blank" ng-bind="msgs.contentTitle | limitTo : 20"></a></td>
+                        <td class=" " ng-bind="msgs.content | limitTo : 50"></td>
                         <td ng-switch on="msgs.utype">
-                            <span ng-switch-when="0">{{msgs.author.userName}}</span>
-                            <span ng-switch-when="1">{{msgs.adminAuthor.userName}}</span>
+                            <span ng-switch-when="0" ng-bind="msgs.author.userName"></span>
+                            <span ng-switch-when="1" ng-bind="msgs.adminAuthor.userName"></span>
                         </td>
                         <td ng-switch on="msgs.utype">
-                            <span ng-switch-when="0">{{msgs.author.email}}</span>
-                            <span ng-switch-when="1">{{msgs.adminAuthor.email}}</span>
+                            <span ng-switch-when="0" ng-bind="msgs.author.email"></span>
+                            <span ng-switch-when="1" ng-bind="msgs.adminAuthor.email"></span>
                         </td>
-                        <td class=" ">{{msgs.replyAuthor.userName}}</td>
-                        <td class=" ">{{msgs.date | date : "yyyy-MM-dd HH:mm:ss"}}</td>
+                        <td class=" " ng-bind="msgs.replyAuthor.userName"></td>
+                        <td class=" " ng-bind="msgs.date | date : 'yyyy-MM-dd HH:mm:ss'"></td>
                         <td class=" ">
                             <button class="btn btn-primary btn-xs" data-whatever="{{msgs}}" data-toggle="modal" data-target="#getMsgDetails"><span class="fa fa-fw fa-mail-reply" aria-hidden="true"></span>回复</button>
                             <button class="btn btn-default btn-xs" ng-click="delMsgsItem(msgs._id)"><span class="fa fa-fw fa-trash-o" aria-hidden="true"></span>删除</button>
@@ -42,7 +42,7 @@
         </div><!-- /.box -->
 
     </div><!-- /.col -->
-    
+
 
     <!--查看留言详情模态窗口-->
     <div class="modal fade" id="getMsgDetails">

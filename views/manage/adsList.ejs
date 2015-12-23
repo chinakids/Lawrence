@@ -28,12 +28,12 @@
                     </tr>
                     <tr class="datalist" ng-repeat="content in data">
                         <td><input type="checkbox" name="listItem" class="mini" value="{{content._id}}" ng-click="getNewIds()"/></td>
-                        <td>{{content.mkey}}</td>
+                        <td ng-bind="content.mkey"></td>
                         <td ng-switch on="content.category">
                             <span ng-switch-when="default">默认</span>
                             <span ng-switch-when="friendlink">友情链接</span>
                         </td>
-                        <td>{{content.title}}</td>
+                        <td ng-bind="content.title"></td>
                         <td ng-switch on="content.state">
                             <span ng-switch-when="1">显示</span>
                             <span ng-switch-when="2">隐藏</span>
@@ -42,8 +42,8 @@
                             <span ng-switch-when="0">文字</span>
                             <span ng-switch-when="1">图片</span>
                         </td>
-                        <td>{{content._id}}</td>
-                        <td>{{content.date | date : "yyyy-MM-dd HH:mm:ss"}}</td>
+                        <td ng-bind="content._id"></td>
+                        <td ng-bind="content..date | date : 'yyyy-MM-dd HH:mm:ss'"></td>
                         <td>
                             <a href="/admin/manage/ads/edit/{{content._id}}" role="button"  title="编辑" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></a>
                             <button class="btn btn-default btn-xs" type="button" title="删除" ng-click="delOneItem(content._id)"><i class="fa fa-trash-o"></i></button>
@@ -57,4 +57,3 @@
 
 
 </div>
-
