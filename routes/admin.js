@@ -745,7 +745,7 @@ var returnAdminRouter = function(io) {
     var targetPath;
 
     if (contentType == "plug") {
-      targetPath = 'manage/addPlugs';
+      //targetPath = 'manage/addPlugs';
     } else {
       targetPath = 'manage/addContent';
     }

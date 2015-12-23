@@ -3,15 +3,15 @@
     <div class="col-xs-12">
         <div class="panel">
             <div class="btn-group">
-                <button class="btn btn-primary btn-sm" type="button"><span class="fa fa-plus-square" aria-hidden="true">&nbsp;</span>添加文档</button>
-                <button data-toggle="dropdown" class="btn btn-primary btn-sm dropdown-toggle" type="button" aria-expanded="false">
+                <a href="/admin/manage/content/add/content" class="btn btn-primary btn-sm"><span class="fa fa-plus-square" aria-hidden="true">&nbsp;</span>添加文档</a>
+                <!-- <button data-toggle="dropdown" class="btn btn-primary btn-sm dropdown-toggle" type="button" aria-expanded="false">
                     <span class="caret"></span>
                     <span class="sr-only">请选择文档类型</span>
                 </button>
                 <ul role="menu" class="dropdown-menu">
                     <li><a href="/admin/manage/content/add/content">普通文档</a></li>
                     <li><a href="/admin/manage/content/add/plug">Jquery插件</a></li>
-                </ul>
+                </ul> -->
             </div>
             <% include public/tableTool %>
             <div class="pull-right">
@@ -50,7 +50,7 @@
                         </td>
                         <td ng-switch on="content.type">
                             <span ng-switch-when="content">文档</span>
-                            <span ng-switch-when="plug">插件</span>
+                            <!-- <span ng-switch-when="plug">插件</span> -->
                             <span ng-switch-when="singer">其它</span>
                         </td>
                         <td ng-class="{true:'text-danger'}[content.isTop==1]"><i class="fa fa-fw fa-flag"></i></td>

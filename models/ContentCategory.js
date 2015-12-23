@@ -58,7 +58,6 @@ var ContentCategorySchema = new Schema({
 
 
 ContentCategorySchema.statics = {
-
   //更新大类模板，子类模板同步更新
   updateCategoryTemps: function(req, res, cateId) {
     if (shortid.isValid(cateId)) {
@@ -90,7 +89,6 @@ ContentCategorySchema.statics = {
       if (err) {
         res.end(err);
       } else {
-
         callBack(doc);
       }
     })
