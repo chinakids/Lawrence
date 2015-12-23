@@ -20,9 +20,9 @@
 
                     <tr class="datalist" id="{{notice._id}}" ng-class="{true:'noRead'}[!notice.isRead]" ng-repeat="notice in data">
                         <td><input type="checkbox" name="listItem" class="mini" value="{{notice._id}}" nid="{{notice.notify._id}}" ng-click="getNewIds()"/></td>
-                        <td class=" " >{{notice.notify.title}}</td>
+                        <td class=" " ng-bind="notice.notify.title"></td>
                         <td class=" " ng-bind-html="notice.notify.content | trustHtml"></td>
-                        <td class=" ">{{notice.date | date : "yyyy-MM-dd HH:mm:ss"}}</td>
+                        <td class=" " ng-bind="notice.date | date : 'yyyy-MM-dd HH:mm:ss'"></td>
                     </tr>
                 </table>
 

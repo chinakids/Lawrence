@@ -23,15 +23,15 @@
 
                     <tr class="datalist" ng-repeat="user in data">
                         <td><input type="checkbox" name="listItem" class="mini" value="{{user._id}}" ng-click="getNewIds()"/></td>
-                        <td class="  sorting_1">{{user.userName}}</td>
+                        <td class="  sorting_1" ng-bind="user.userName"></td>
                         <td ng-switch on="user.group">
                             <span ng-switch-when="0">普通用户</span>
                             <span ng-switch-when="1">会员</span>
                         </td>
-                        <td class=" ">{{user.name}}</td>
-                        <td class=" ">{{user.phoneNum}}</td>
-                        <td class=" ">{{user.email}}</td>
-                        <td class=" ">{{user.date | date : "yyyy-MM-dd HH:mm:ss"}}</td>
+                        <td class=" " ng-bind="user.name"></td>
+                        <td class=" " ng-bind="user.phoneNum"></td>
+                        <td class=" " ng-bind="user.email"></td>
+                        <td class=" " ng-bind="user.date | date : 'yyyy-MM-dd HH:mm:ss"></td>
                         <td class=" ">
                             <button class="btn btn-primary btn-xs" data-whatever="{{user._id}}" data-toggle="modal" data-target="#addNewRegUser"><span class="fa fa-fw fa-edit" aria-hidden="true"></span>编辑</button>&nbsp;
                             <button class="btn btn-default btn-xs" ng-click="delOneItem(user._id)"><span class="fa fa-fw fa-trash-o" aria-hidden="true"></span>删除</button>
@@ -43,7 +43,7 @@
         </div><!-- /.box -->
 
     </div><!-- /.col -->
-    
+
     <!--添加新用户模态窗口-->
     <div class="modal fade" id="addNewRegUser">
         <div class="modal-dialog">
@@ -57,7 +57,7 @@
                         <div class="form-group">
                             <label class="control-label col-sm-4">用户名</label>
                             <div class="col-sm-6">
-                                <p class="form-control-static text-primary">{{formData.userName}}</p>
+                                <p class="form-control-static text-primary" ng-bind="formData.userName"></p>
                                 <!--<input type="text" class="form-control" name="userName" ng-minlength="5" ng-maxlength="12" ng-pattern="/^[a-zA-Z][a-zA-Z0-9_]{4,11}$/" ng-model="formData.userName" required/>-->
                                 <!--<label for="inputError" class="control-label text-danger" ng-show="myForm.userName.$invalid && !myForm.userName.$pristine"><i class="fa fa-times-circle-o"></i> 5-12个英文字符</label>-->
                             </div>
@@ -115,4 +115,3 @@
 </div><!-- /.row -->
 
 </div>
-

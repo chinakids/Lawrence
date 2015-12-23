@@ -22,8 +22,6 @@ var db = mongoose.connect(settings.URL);
 //信息删除操作
 
 var DbOpt = {
-
-
   del: function(obj, req, res, logMsg) {
     var params = url.parse(req.url, true);
     var targetId = params.query.uid;

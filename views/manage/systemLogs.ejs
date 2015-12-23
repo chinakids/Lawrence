@@ -16,11 +16,11 @@
                     </tr>
                     <tr class="datalist" ng-repeat="opt in data">
                         <td><input type="checkbox" name="listItem" class="mini" value="{{opt._id}}" ng-click="getNewIds()"/></td>
-                        <td>{{opt.logs}}</td>
+                        <td ng-bind="opt.logs"></td>
                         <td ng-switch on="opt.type">
                             <span ng-switch-when="login">系统登录</span>
                         </td>
-                        <td class=" ">{{opt.date | date : "yyyy-MM-dd HH:mm:ss"}}</td>
+                        <td class=" " ng-bind="opt.date | date : 'yyyy-MM-dd HH:mm:ss'"></td>
                         <td class=" ">
                             <button class="btn btn-default btn-xs" ng-click="delOneItem(opt._id)"><span class="fa fa-fw fa-trash-o" aria-hidden="true"></span>删除</button>
                         </td>
@@ -34,5 +34,3 @@
     </div><!-- /.col -->
 
 </div>
-
-

@@ -49,12 +49,13 @@ var fs = require('fs');
 var http = require('http');
 var request = require('request');
 /* GET home page. */
-
-var PW = require('png-word');
-var RW = require('../util/randomWord');
-var rw = RW('abcdefghijklmnopqrstuvwxyz1234567890');
-var pngword = new PW(PW.GRAY);
-
+//ccap验证码
+var ccap = require('ccap')({
+  'width':214,
+  'height':68,
+  'offset':30,
+  'fontsize':45
+});
 
 
 var returnAdminRouter = function(io) {
@@ -69,23 +70,29 @@ var returnAdminRouter = function(io) {
 
 
   //管理员登录验证码
-  router.get('/vnum', function(req, res) {
+  // router.get('/ccap', function(req, res) {
+  //   var word = rw.random(4);
+  //   req.session.ccap = word;
+  //   pngword.createReadStream(word).pipe(res);
+  // });
 
-    var word = rw.random(4);
-    req.session.vnum = word;
-    pngword.createReadStream(word).pipe(res);
+  router.get('/ccap', function(req, res) {
+    //var captcha = ccap();
+    var ary = ccap.get();
+    req.session.ccap = ary[0];
+    var buffer = ary[1];
+    res.end(buffer);
   });
-
-
 
   // 管理员登录提交请求
   router.post('/doLogin', function(req, res, next) {
     var userName = req.body.userName;
     var password = req.body.password;
-    var vnum = req.body.vnum;
+    var code = req.body.ccap.toUpperCase();
+
     var newPsd = DbOpt.encrypt(password, settings.encrypt_key);
 
-    if (vnum != req.session.vnum) {
+    if (code != req.session.ccap) {
       res.end('验证码有误！');
     } else {
       if (validator.isUserName(userName) && validator.isPsd(password)) {
@@ -393,6 +400,7 @@ var returnAdminRouter = function(io) {
         addOneCategory(req, res)
       } else if (targetObj == Content) {
         req.body.author = req.session.adminUserInfo.name;
+        req.body.authorLogo = req.session.adminUserInfo.logo;
         DbOpt.addOne(targetObj, req, res);
       } else if (targetObj == ContentTags) {
         addOneContentTags(req, res)
@@ -727,7 +735,7 @@ var returnAdminRouter = function(io) {
     var targetPath;
 
     if (contentType == "plug") {
-      targetPath = 'manage/addPlugs';
+      //targetPath = 'manage/addPlugs';
     } else {
       targetPath = 'manage/addContent';
     }
@@ -745,7 +753,7 @@ var returnAdminRouter = function(io) {
     var targetPath;
 
     if (contentType == "plug") {
-      targetPath = 'manage/addPlugs';
+      //targetPath = 'manage/addPlugs';
     } else {
       targetPath = 'manage/addContent';
     }

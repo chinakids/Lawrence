@@ -21,11 +21,11 @@
                     </tr>
                     <tr class="datalist" ng-repeat="user in data">
                         <td><input type="checkbox" name="listItem" class="mini" value="{{user._id}}" ng-click="getNewIds()"/></td>
-                        <td class="  sorting_1">{{user.userName}}</td>
-                        <td class=" ">{{user.group.name}}</td>
-                        <td class=" ">{{user.name}}</td>
-                        <td class=" ">{{user.phoneNum}}</td>
-                        <td class=" ">{{user.email}}</td>
+                        <td class="  sorting_1" ng-bind="user.userName"></td>
+                        <td class=" " ng-bind="user.group.name"></td>
+                        <td class=" " ng-bind="user.name"></td>
+                        <td class=" " ng-bind="user.phoneNum"></td>
+                        <td class=" " ng-bind="user.email"></td>
                         <td class=" ">
                             <button class="btn btn-primary btn-xs" data-whatever="{{user._id}}" data-toggle="modal" data-target="#addNewAdminUser"><span class="fa fa-fw fa-edit" aria-hidden="true"></span>编辑</button>&nbsp;
                             <button class="btn btn-default btn-xs" ng-click="delOneItem(user._id)"><span class="fa fa-fw fa-trash-o" aria-hidden="true"></span>删除</button>

@@ -39,10 +39,10 @@
                             'fa fa-fw fa-file-text' : (file.type == 'css'),
                             'fa fa-fw fa-file-text-o' : (file.type == 'others')
                             }"></i>&nbsp;
-                                <a href="###" ng-click="getFiles(file.type,file.name,file.path)">{{file.name}}</a>
+                                <a href="###" ng-click="getFiles(file.type,file.name,file.path)" ng-bind="file.name"></a>
                             </td>
-                            <td>{{file.size}}</td>
-                            <td>{{file.date | date : "yyyy-MM-dd HH:mm:ss"}}</td>
+                            <td ng-bind="file.size"></td>
+                            <td ng-bind="file.date | date : 'yyyy-MM-dd HH:mm:ss'"></td>
                             <td>
                                 <a href="#" data-whatever="{{file.name}},{{file.path}}"data-toggle="modal" data-target="#modifyFile" title="修改"  class="text-info" ng-show="file.type == 'html' || file.type == 'js' || file.type == 'css'" class="text-info">修改</a>&nbsp;&nbsp;
                                 <a href="#" data-whatever="{{file.name}},{{file.path}}"data-toggle="modal" data-target="#reNameFile" title="重命名" class="text-warning">重命名</a>&nbsp;&nbsp;
@@ -63,7 +63,7 @@
                             'fa fa-fw fa-file-o' : (file.type == 'html'),
                             'fa fa-fw fa-file-text-o' : (file.type == 'others')
                             }"></i></div>
-                            <p class="fileName">{{file.name}}</p>
+                            <p class="fileName" ng-bind="file.name"></p>
                         </li>
                     </ul>
                 </div>
@@ -88,7 +88,7 @@
                         <div class="form-group">
                             <label class="control-label col-sm-4">原名称</label>
                             <div class="col-sm-6">
-                                <p class="form-control-static text-primary">{{formData.oldName}}</p>
+                                <p class="form-control-static text-primary" ng-bind="formData.oldName"></p>
                             </div>
                         </div>
                         <div class="form-group">
@@ -123,7 +123,7 @@
                         <div class="form-group">
                             <label class="control-label col-sm-2">文件名称</label>
                             <div class="col-sm-8">
-                                <p class="form-control-static text-primary">{{mdFormData.name}}</p>
+                                <p class="form-control-static text-primary" ng-bind="mdFormData.name"></p>
                             </div>
                         </div>
                         <div class="form-group">

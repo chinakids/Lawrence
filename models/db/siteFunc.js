@@ -458,8 +458,6 @@ var siteFunc = {
 
   //根据模板获取跳转链接
   renderToTargetPageByType: function(req, res, type, params) {
-    console.log(type)
-    console.log(params)
     this.getFrontTemplate(req, res, function(temp) {
       var targetPath;
       if (temp) {

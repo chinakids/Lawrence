@@ -18,8 +18,8 @@
                     <tr ng-repeat="opt in data">
                         <td><input type="checkbox" class="mini"/></td>
                         <td><i class="fa fa-fw fa-table"></i> {{opt.fileName}}</td>
-                        <td class="  sorting_1">{{opt.logs}}</td>
-                        <td class=" ">{{opt.date | date : "yyyy-MM-dd HH:mm:ss"}}</td>
+                        <td class="  sorting_1" ng-bind="opt.logs"></td>
+                        <td class=" " ng-bind="opt.date | date : 'yyyy-MM-dd HH:mm:ss'"></td>
                         <td class=" ">
                             <button class="btn btn-default btn-xs" ng-click="delDataItem(opt._id,opt.path)"><span class="fa fa-fw fa-trash-o" aria-hidden="true"></span>删除</button>
                         </td>

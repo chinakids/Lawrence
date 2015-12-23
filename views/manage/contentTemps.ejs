@@ -23,7 +23,7 @@
                                             <p><span><labe>名称：</labe>{{temp.name}}</span>&nbsp;&nbsp;<a class="label label-success" href="#">当前主题</a></p>
                                             <p><span><labe>作者：</labe>{{temp.author}}</span></p>
                                             <p><span><labe>版本号：</labe>{{temp.version}}</span></p>
-                                            <p>{{temp.comment}}</p>
+                                            <p ng-bind="temp.comment"></p>
                                         </div>
                                         <div class="col-md-7">
                                             <div class="box">
@@ -41,9 +41,9 @@
                                                         </tr>
                                                         <tr ng-repeat="item in temp.items">
                                                             <td><i class="fa fa-fw fa-tachometer"></i></td>
-                                                            <td>{{item.name}}</td>
-                                                            <td>{{item.forder}}</td>
-                                                            <td>{{item.comment}}</td>
+                                                            <td ng-bind="item.name"></td>
+                                                            <td ng-bind="item.forder"></td>
+                                                            <td ng-bind="item.comment"></td>
                                                             <td>
                                                                 <div ng-switch="item.isDefault">
                                                                     <div ng-switch-when="false">
@@ -72,7 +72,7 @@
                                 <div class="col-md-12 min-hight">
                                     <div class="col-md-2"  ng-repeat="temp in data">
                                         <img class="img-thumbnail" src="{{temp.sImg}}" alt="{{temp.comment}}">
-                                        <h5>{{temp.name}}</h5>
+                                        <h5 ng-bind="temp.name"></h5>
                                         <p><span><labe>作者：</labe>{{temp.author}}</span>&nbsp;&nbsp;<span><labe>版本号：</labe>{{temp.version}}</span></p>
                                         <p>
                                             <span>
@@ -169,7 +169,7 @@
                                 <div class="col-md-12 min-hight">
                                     <div class="col-md-2"  ng-repeat="temp in themeShop">
                                         <img class="img-thumbnail" src="{{temp.sImg}}" alt="{{temp.comment}}">
-                                        <h5>{{temp.name}}</h5>
+                                        <h5 ng-bind="temp.name"></h5>
                                         <p><span><labe>作者：</labe>{{temp.author}}</span>&nbsp;&nbsp;<span><labe>版本号：</labe>{{temp.version}}</span></p>
                                         <p>
                                             <span><button role="button" class="btn btn-default btn-xs" ng-click="installTheme(temp._id)">安装</button></span>

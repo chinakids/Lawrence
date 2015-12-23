@@ -15,7 +15,6 @@ var ContentSchema = new Schema({
     'default': shortid.generate
   },
   title: String,
-  stitle: String,
   type: {
     type: String,
     default: "content"
@@ -43,6 +42,9 @@ var ContentSchema = new Schema({
   author: {
     type: String
   },
+  authorLogo:{
+    type: String
+  },
   state: {
     type: Boolean,
     default: true
@@ -55,6 +57,16 @@ var ContentSchema = new Schema({
     type: Number,
     default: 1
   },
+  sellState:{
+    type: Number,
+    default: 0
+  },//交易状态 0为待售 1为售出
+  phone:{
+    type: String
+  },
+  location:{
+    type: String
+  },
   comments: {},
   commentNum: {
     type: Number,
@@ -65,16 +77,10 @@ var ContentSchema = new Schema({
     default: 0
   }, // 喜欢数
   likeUserIds: String, // 喜欢该文章的用户ID集合
-  from: {
-    type: String,
-    default: '1'
-  }, // 来源 1为原创 2为转载
-
-
-  //    插件信息相关属性
-  repositoryPath: String, // git 知识库路径
-  downPath: String, // git 项目下载地址
-  previewPath: String // 插件预览地址
+  // from: {
+  //   type: String,
+  //   default: '1'
+  // }
 });
 
 
@@ -98,8 +104,34 @@ ContentSchema.statics = {
         callBack();
       })
     })
+  },
+  getTotalCount: function(pageLen,callBack){
+    Content
+      .find({state:true})
+      .populate('contentTemp')
+      .exec(function(err, result) {
+        if(err){
+          res.send(err);
+        }else{
+          if(callBack) callBack(Math.ceil(result.length / pageLen));
+        }
+      })
+  },
+  getlist: function(page,pageLen,callBack){
+    Content
+      .find({state:true})
+      .populate('contentTemp')
+      .sort('-date')
+      .skip(page * pageLen)
+      .limit(pageLen)
+      .exec(function(err, result) {
+        if(err){
+          res.send(err);
+        }else{
+          if(callBack) callBack(result);
+        }
+      })
   }
-
 };
 
 

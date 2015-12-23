@@ -26,6 +26,8 @@ var fs = require('fs');
 //时间格式化
 var moment = require('moment');
 var filter = require('./util/filter');
+//api抽象
+var api = require('./routes/api');
 
 /*模板引擎*/
 var partials = require('express-partials');
@@ -131,9 +133,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/admin', validat);
 app.use('/admin', admin);
 app.use('/users', users);
+app.use('/api', api);
 app.use('/', routes);
 app.use('/content', content);
 app.use('/system', system);
+
 
 
 // catch 404 and forward to error handler
