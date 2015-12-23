@@ -133,10 +133,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/admin', validat);
 app.use('/admin', admin);
 app.use('/users', users);
+app.use('/api', api);
 app.use('/', routes);
 app.use('/content', content);
 app.use('/system', system);
-app.use('/api', api);
+
 
 
 // catch 404 and forward to error handler

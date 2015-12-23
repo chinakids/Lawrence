@@ -23,8 +23,24 @@ var cache = require('../util/cache');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  res.send('API状态正常')
+});
+//分页获取
+router.get('/pagination', function(req, res, next) {
+  var page = parseInt(req.query.page) || 1,
+      pageLen = req.query.pageLen || 10;
+  console.log(req.query)
+  var totalCount = '';
+  Content.getTotalCount(pageLen,function(count){
+    totalCount = count;
+    Content.getlist(page - 1,pageLen,function(result){
+      res.send({
+        'totalCount' : totalCount,
+        'result' : result
+      })
+    })
+  })
 
-  req.send('api')
 
 });
 

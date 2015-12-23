@@ -96,8 +96,34 @@ ContentSchema.statics = {
         callBack();
       })
     })
+  },
+  getTotalCount: function(pageLen,callBack){
+    Content
+      .find({state:true})
+      .populate('contentTemp')
+      .exec(function(err, result) {
+        if(err){
+          res.send(err);
+        }else{
+          if(callBack) callBack(Math.ceil(result.length / pageLen));
+        }
+      })
+  },
+  getlist: function(page,pageLen,callBack){
+    Content
+      .find({state:true})
+      .populate('contentTemp')
+      .sort('-updateDate')
+      .skip(page * pageLen)
+      .limit(pageLen)
+      .exec(function(err, result) {
+        if(err){
+          res.send(err);
+        }else{
+          if(callBack) callBack(result);
+        }
+      })
   }
-
 };
 
 
