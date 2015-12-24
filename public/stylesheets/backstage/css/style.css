@@ -56,3 +56,10 @@
 .modal-msg {
   font-size: 14px;
 }
+.ellipsis {
+  display: block;
+  word-break: keep-all;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

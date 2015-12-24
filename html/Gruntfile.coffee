@@ -11,17 +11,17 @@ module.exports = (grunt) ->
         files: [
           './resource/less/**/*.less'
         ]
-        tasks: ['less']
+        tasks: ['less','copy']
       coffee:
         files:[
           './resource/coffee/**/*.coffee'
         ]
-        tasks: ['coffee','uglify']
+        tasks: ['coffee','uglify','copy']
       bower:
         files:[
           './bower.json'
         ]
-        task:['wiredep:app']
+        task:['wiredep:app','copy']
     less:
       options:
         compress: true
@@ -57,12 +57,20 @@ module.exports = (grunt) ->
     wiredep:
       app:
         src: ['*.html','./**/*.html']
+    copy:
+      main:
+        expand: true
+        cwd: 'resource/'
+        src: '**'
+        dest: '../public/themes/dorawhite/'
+        filter: 'isFile'
 
 
 
   #注冊任务
   grunt.registerTask 'default', [
     'wiredep',
+    'copy',
     'watch'
   ]
 

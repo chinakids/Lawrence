@@ -48,7 +48,7 @@
                           <span ng-switch-when="0"><a href="" class="label label-success">待售</a></span>
                           <span ng-switch-when="1"><a href="" class="label label-danger">售出</a></span>
                         </td>
-                        <td ng-switch on="content.callWay" title="{{content.callString}}">
+                        <td ng-switch on="content.callWay" title="{{content.callString}}" style="max-width:100px;" class="ellipsis">
                           <span ng-switch-when="0"><i class="fa fa-qq text-primary"></i> {{content.callString}}</span>
                           <span ng-switch-when="1"><i class="fa fa-weixin text-success"></i> {{content.callString}}</span>
                           <span ng-switch-when="2"><i class="fa fa-phone text-warning"></i> {{content.callString}}</span>

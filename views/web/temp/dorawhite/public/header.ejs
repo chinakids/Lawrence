@@ -1,4 +1,4 @@
-<div class="wrapper top-box blur">
+<div class="wrapper top-box <% pageType == 'index' ? 'blur' : '' %>">
   <div class="container">
     <div class="top-logo">
       <a href="/" title="logo">
@@ -18,7 +18,7 @@
       <% } %>
     </ul>
     <div class="top-search">
-      <input type="text" placeholder="搜索...">
+      <input type="text" placeholder="搜索..." class="js-search">
       <button type="button" class="btn btn-xs">
         <span class="ar ar-seach"></span>
       </button>

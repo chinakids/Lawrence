@@ -19,6 +19,7 @@
   "dependencies": {
     "Art-Reactor": "art-reactor#*",
     "normalize-css": "normalize.css#~3.0.3",
-    "jquery": "~2.1.4"
+    "jquery": "~2.1.4",
+    "handlebars": "~4.0.5"
   }
 }

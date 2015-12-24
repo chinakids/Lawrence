@@ -40,7 +40,7 @@ router.get('/pagination', function(req, res, next) {
     totalCount = count;
     Content.getlist(page - 1,pageLen,function(result){
       res.send({
-        'totalCount' : totalCount,
+        'total' : totalCount,
         'result' : result
       })
     })

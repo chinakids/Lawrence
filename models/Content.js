@@ -57,6 +57,9 @@ var ContentSchema = new Schema({
     type: Number,
     default: 1
   },
+  price:{
+    type:Number
+  },
   sellState:{
     type: Number,
     default: 0
