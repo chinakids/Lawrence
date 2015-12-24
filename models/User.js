@@ -15,8 +15,9 @@ var UserSchema = new Schema({
   userName: String,
   password: String,
   email: String,
-  qq: Number,
-  phoneNum: Number,
+  qq: String,
+  wechat: String,
+  phoneNum: String,
   comments: {
     type: String,
     default: "这个人很懒，什么都没有留下..."

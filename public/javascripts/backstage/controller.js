@@ -72,7 +72,6 @@ doraApp.controller("adminUserList", ['$scope', '$http', 'pageData', 'getItemServ
   initDelOption($scope, $http, '您确认要删除选中的管理员吗？');
   //logo上传
   initUploadFyBtn('uploadULogoImg', "userlogo", function(data) {
-    alert('上传成功');
     $("#userLogo").attr("src", data);
     $scope.formData.logo = data;
   });

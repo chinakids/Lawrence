@@ -26,11 +26,6 @@ $ () ->
   ,() ->
     $(@).removeClass 'cur'
 
-  $(window).scroll () ->
-    if $(document).scrollTop() >= 280
-      $('.top-box').removeClass('blur')
-    else
-      $('.top-box').addClass('blur')
   #搜索
   $(document).keyup (e)->
     if e.keyCode is 13

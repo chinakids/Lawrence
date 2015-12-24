@@ -50,9 +50,22 @@ router.get('/pagination', function(req, res, next) {
   console.log(req.query)
   var totalCount = '';
   Content.getlist(page - 1,pageLen,function(result){
+    var data = [];
+    result.forEach(function(item){
+      if(item.likeNum > 99){
+        item.likeNum = '99+';
+      }
+      if(item.clikNum > 99){
+        item.likeNum = '99+';
+      }
+      if(item.commentNum > 99){
+        item.commentNum = '99+';
+      }
+      data.push(item);
+    })
     res.send({
       'title' : '分页获取接口',
-      'result' : result
+      'result' : data
     })
   })
 });

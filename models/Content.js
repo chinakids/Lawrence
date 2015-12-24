@@ -42,9 +42,17 @@ var ContentSchema = new Schema({
   author: {
     type: String
   },
+  belongAdmin:{
+    type: Boolean,
+    default: true
+  },//是否为管理员发布
   authorLogo:{
     type: String
   },
+  userInfo:{
+    type: String,
+    ref: 'User'
+  },//用户发布则关联用户信息
   state: {
     type: Boolean,
     default: true
@@ -58,7 +66,8 @@ var ContentSchema = new Schema({
     default: 1
   },
   price:{
-    type:Number
+    type:Number,
+    default:0
   },
   sellState:{
     type: Number,
@@ -128,6 +137,7 @@ ContentSchema.statics = {
     Content
       .find({state:true})
       .populate('category')
+      .populate('uesrInfo')
       .sort('-date')
       .skip(page * pageLen)
       .limit(pageLen)
