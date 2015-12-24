@@ -1,17 +1,257 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="col-md-9 left-frame">
-                <% include public/itemListTemp %>
-                <% include public/pagination %>
-            </div>
-            <div class="col-md-3 right-frame">
-                <% include public/searchBoard %>
-                <% include public/cateList %>
-                <% include public/hotNewsList %>
-                <% include public/tagsList %>
-                <% include public/friendLink %>
-            </div>
-        </div>
+<script src="/themes/<%=staticforder%>/js/common.js?vesion=<%=siteConfig.version%>"></script>
+
+<div class="wrapper">
+  <div class="banner" style="background-image:url(/themes/<%=staticforder%>/images/eq/banner.jpg)">
+    <div class="search-box">
+      <h3 style="background-image:url(/themes/<%=staticforder%>/images/logo/title.png)"></h3>
+      <div class="search">
+        <input type="text" placeholder="搜索您所需要的...">
+        <button type="button" class="btn btn-xs">
+          <span class="ar ar-seach"></span>
+        </button>
+      </div>
     </div>
+  </div>
+</div>
+<div class="wrapper" style="padding-top:10px;">
+  <div class="container">
+    <div class="topics-box clearfix">
+      <ul>
+        <li><a href="#"><img src="/themes/<%=staticforder%>/images/eq/zhuanti.jpg" alt=""></a></li>
+        <li><a href="#"><img src="/themes/<%=staticforder%>/images/eq/zhuanti.jpg" alt=""></a></li>
+        <li><a href="#"><img src="/themes/<%=staticforder%>/images/eq/zhuanti.jpg" alt=""></a></li>
+        <li><a href="#"><img src="/themes/<%=staticforder%>/images/eq/zhuanti.jpg" alt=""></a></li>
+        <li><a href="#"><img src="/themes/<%=staticforder%>/images/eq/zhuanti.jpg" alt=""></a></li>
+      </ul>
+    </div>
+    <div class="pubu">
+      <ul class="pubu-wrap clearfix js-pubu">
+        <li>
+          <div class="pubu-img-box">
+          <a href="#" class="pubu-img"><img src="/themes/<%=staticforder%>/images/eq/eq-head.png"/>
+          </a>
+          <p class="pubu-num">
+            <a href="javascript:;" class="watch-num"><i class="ar ar-preview"></i>18</a>
+            <a href="javascript:;" class="like-num"><i class="ar ar-heart"></i>30</a>
+          </p>
+          </div>
+          <div>
+            <a href="#" class="pubu-img-name">激情畅想“青春派“威丝曼</a>
+            <p class="pubu-sort"><i class="ar ar-location"></i>KU劳伦斯校区</p>
+            <a href="#" class="pubu-method clearfix"><span style="background-image:url(/themes/<%=staticforder%>/images/eq/bg-small-head.png);"></span><b>莫小夕</b></a>
+          </div>
+        </li>
+        <li>
+          <div class="pubu-img-box">
+          <a href="#" class="pubu-img"><img src="/themes/<%=staticforder%>/images/eq/pubu4.png"/>
+            </a>
+          <p class="pubu-num">
+            <a href="javascript:;" class="watch-num"><i class="ar ar-preview"></i>18</a>
+            <a href="javascript:;" class="like-num"><i class="ar ar-heart"></i>30</a>
+          </p>
+          </div>
+          <div>
+            <a href="#" class="pubu-img-name">激情畅想“青春派“威丝曼</a>
+            <p class="pubu-sort"><i class="ar ar-location"></i>KU劳伦斯校区</p>
+
+            <a href="#" class="pubu-method clearfix"><span style="background-image:url(/themes/<%=staticforder%>/images/eq/bg-small-head.png);"></span><b>莫小夕</b></a>
+          </div>
+        </li>
+        <li>
+        <div class="pubu-img-box">
+          <a href="#" class="pubu-img"><img src="/themes/<%=staticforder%>/images/eq/pubu2.png"/>
+          </a>
+          <p class="pubu-num">
+            <a href="javascript:;" class="watch-num"><i class="ar ar-preview"></i>18</a>
+            <a href="javascript:;" class="like-num"><i class="ar ar-heart"></i>30</a>
+          </p>
+          </div>
+          <div>
+            <a href="#" class="pubu-img-name">激情畅想“青春派“威丝曼</a>
+            <p class="pubu-sort"><i class="ar ar-location"></i>KU劳伦斯校区</p>
+            <a href="#" class="pubu-method clearfix"><span style="background-image:url(/themes/<%=staticforder%>/images/eq/bg-small-head.png);"></span><b>莫小夕</b></a>
+          </div>
+        </li>
+        <li>
+        <div class="pubu-img-box">
+          <a href="#" class="pubu-img"><img src="/themes/<%=staticforder%>/images/eq/eq-head.png"/>
+            </a>
+          <p class="pubu-num">
+            <a href="javascript:;" class="watch-num"><i class="ar ar-preview"></i>18</a>
+            <a href="javascript:;" class="like-num"><i class="ar ar-heart"></i>30</a>
+          </p>
+          </div>
+          <div>
+            <a href="#" class="pubu-img-name">激情畅想“青春派“威丝曼</a>
+            <p class="pubu-sort"><i class="ar ar-location"></i>KU劳伦斯校区</p>
+            <a href="#" class="pubu-method clearfix"><span style="background-image:url(/themes/<%=staticforder%>/images/eq/bg-small-head.png);"></span><b>莫小夕</b></a>
+          </div>
+        </li>
+        <li>
+        <div class="pubu-img-box">
+          <a href="#" class="pubu-img"><img src="/themes/<%=staticforder%>/images/eq/eq-pubu1.png"/>
+            </a>
+          <p class="pubu-num">
+            <a href="javascript:;" class="watch-num"><i class="ar ar-preview"></i>18</a>
+            <a href="javascript:;" class="like-num"><i class="ar ar-heart"></i>30</a>
+          </p>
+          </div>
+          <div>
+            <a href="#" class="pubu-img-name">激情畅想“青春派“威丝曼</a>
+            <p class="pubu-sort"><i class="ar ar-location"></i>KU劳伦斯校区</p>
+
+            <a href="#" class="pubu-method clearfix"><span style="background-image:url(/themes/<%=staticforder%>/images/eq/bg-small-head.png);"></span><b>莫小夕</b></a>
+          </div>
+        </li>
+        <li>
+        <div class="pubu-img-box">
+          <a href="#" class="pubu-img"><img src="/themes/<%=staticforder%>/images/eq/eq-head.png"/>
+            </a>
+          <p class="pubu-num">
+            <a href="javascript:;" class="watch-num"><i class="ar ar-preview"></i>18</a>
+            <a href="javascript:;" class="like-num"><i class="ar ar-heart"></i>30</a>
+          </p>
+          </div>
+          <div>
+            <a href="#" class="pubu-img-name">激情畅想“青春派“威丝曼</a>
+            <p class="pubu-sort"><i class="ar ar-location"></i>KU劳伦斯校区</p>
+
+            <a href="#" class="pubu-method clearfix"><span style="background-image:url(/themes/<%=staticforder%>/images/eq/bg-small-head.png);"></span><b>莫小夕</b></a>
+          </div>
+        </li>
+        <li>
+        <div class="pubu-img-box">
+          <a href="#" class="pubu-img"><img src="/themes/<%=staticforder%>/images/eq/pubu4.png"/>
+            </a>
+          <p class="pubu-num">
+            <a href="javascript:;" class="watch-num"><i class="ar ar-preview"></i>18</a>
+            <a href="javascript:;" class="like-num"><i class="ar ar-heart"></i>30</a>
+          </p>
+          </div>
+          <div>
+            <a href="#" class="pubu-img-name">激情畅想“青春派“威丝曼</a>
+            <p class="pubu-sort"><i class="ar ar-location"></i>KU劳伦斯校区</p>
+
+            <a href="#" class="pubu-method clearfix"><span style="background-image:url(/themes/<%=staticforder%>/images/eq/bg-small-head.png);"></span><b>莫小夕</b></a>
+          </div>
+        </li>
+        <li>
+        <div class="pubu-img-box">
+          <a href="#" class="pubu-img"><img src="/themes/<%=staticforder%>/images/eq/pubu2.png"/>
+            </a>
+          <p class="pubu-num">
+            <a href="javascript:;" class="watch-num"><i class="ar ar-preview"></i>18</a>
+            <a href="javascript:;" class="like-num"><i class="ar ar-heart"></i>30</a>
+          </p>
+          </div>
+          <div>
+            <a href="#" class="pubu-img-name">激情畅想“青春派“威丝曼</a>
+            <p class="pubu-sort"><i class="ar ar-location"></i>KU劳伦斯校区</p>
+
+            <a href="#" class="pubu-method clearfix"><span style="background-image:url(/themes/<%=staticforder%>/images/eq/bg-small-head.png);"></span><b>莫小夕</b></a>
+          </div>
+        </li>
+        <li>
+        <div class="pubu-img-box">
+          <a href="#" class="pubu-img"><img src="/themes/<%=staticforder%>/images/eq/eq-head.png"/>
+            </a>
+          <p class="pubu-num">
+            <a href="javascript:;" class="watch-num"><i class="ar ar-preview"></i>18</a>
+            <a href="javascript:;" class="like-num"><i class="ar ar-heart"></i>30</a>
+          </p>
+          </div>
+          <div>
+            <a href="#" class="pubu-img-name">激情畅想“青春派“威丝曼</a>
+            <p class="pubu-sort"><i class="ar ar-location"></i>KU劳伦斯校区</p>
+
+            <a href="#" class="pubu-method clearfix"><span style="background-image:url(/themes/<%=staticforder%>/images/eq/bg-small-head.png);"></span><b>莫小夕</b></a>
+          </div>
+        </li>
+        <li>
+        <div class="pubu-img-box">
+          <a href="#" class="pubu-img"><img src="/themes/<%=staticforder%>/images/eq/eq-pubu1.png"/>
+          </a>
+          <p class="pubu-num">
+            <a href="javascript:;" class="watch-num"><i class="ar ar-preview"></i>18</a>
+            <a href="javascript:;" class="like-num"><i class="ar ar-heart"></i>30</a>
+          </p>
+          </div>
+          <div>
+            <a href="#" class="pubu-img-name">激情畅想“青春派“威丝曼</a>
+            <p class="pubu-sort"><i class="ar ar-location"></i>KU劳伦斯校区</p>
+
+            <a href="#" class="pubu-method clearfix"><span style="background-image:url(/themes/<%=staticforder%>/images/eq/bg-small-head.png);"></span><b>莫小夕</b></a>
+          </div>
+        </li>
+        <li>
+        <div class="pubu-img-box">
+          <a href="#" class="pubu-img"><img src="/themes/<%=staticforder%>/images/eq/pubu4.png"/>
+            </a>
+          <p class="pubu-num">
+            <a href="javascript:;" class="watch-num"><i class="ar ar-preview"></i>18</a>
+            <a href="javascript:;" class="like-num"><i class="ar ar-heart"></i>30</a>
+          </p>
+          </div>
+          <div>
+            <a href="#" class="pubu-img-name">激情畅想“青春派“威丝曼</a>
+            <p class="pubu-sort"><i class="ar ar-location"></i>KU劳伦斯校区</p>
+
+            <a href="#" class="pubu-method clearfix"><span style="background-image:url(/themes/<%=staticforder%>/images/eq/bg-small-head.png);"></span><b>莫小夕</b></a>
+          </div>
+        </li>
+        <li>
+        <div class="pubu-img-box">
+          <a href="#" class="pubu-img"><img src="/themes/<%=staticforder%>/images/eq/pubu2.png"/>
+            </a>
+          <p class="pubu-num">
+            <a href="javascript:;" class="watch-num"><i class="ar ar-preview"></i>18</a>
+            <a href="javascript:;" class="like-num"><i class="ar ar-heart"></i>30</a>
+          </p>
+          </div>
+          <div>
+            <a href="#" class="pubu-img-name">激情畅想“青春派“威丝曼</a>
+            <p class="pubu-sort"><i class="ar ar-location"></i>KU劳伦斯校区</p>
+
+            <a href="#" class="pubu-method clearfix"><span style="background-image:url(/themes/<%=staticforder%>/images/eq/bg-small-head.png);"></span><b>莫小夕</b></a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- page -->
+    <ul class="pagination clearfix">
+      <li>
+        <a href="">首页</a>
+      </li>
+      <li>
+        <a href="">上一页</a>
+      </li>
+      <li class="active">
+        <a href="#">1</a>
+      </li>
+      <li>
+        <a href="#">2</a>
+      </li>
+      <li>
+        <a href="#">3</a>
+      </li>
+      <li>
+        <a href="#">4</a>
+      </li>
+      <li>
+        <a href="#">5</a>
+      </li>
+      <li>
+        <a href="javascript:;">···</a>
+      </li>
+      <li>
+        <a href="#">99</a>
+      </li>
+      <li>
+        <a href="">下一页</a>
+      </li>
+      <li>
+        <a href="">尾页</a>
+      </li>
+    </ul>
+  </div>
 </div>

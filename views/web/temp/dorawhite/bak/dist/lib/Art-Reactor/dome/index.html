@@ -1,0 +1,115 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>Art-Reactor | 字体图标集</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../dist/art-reactor.min.css">
+    <style>
+      ul,li{
+        list-style: none;
+      }
+      .header .form-group {
+        position: relative;
+        top: 7px;
+      }
+      .ar{
+        float: left;
+        margin-right: 10px;
+        font-size: 24px;
+      }
+      li{
+        width: 20%;
+        padding: 10px 0;
+        line-height: 24px;
+        float: left;
+      }
+      .popover.bottom {
+        margin-top: -7px;
+        margin-left: -40px;
+      }
+      code{
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body ng-app="FontReactor" ng-controller="MainCtrl">
+    <div class="header">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#/">Art-Reactor | 字体图标集 - 当前总数{{list.length}}枚</a>
+          </div>
+          <div class="form-group pull-right col-xs-3">
+            <input type="search" class="form-control" ng-model="search.cls" placeholder="输入关键字搜索···">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="alert alert-info" role="alert">
+        详细使用方法以及下载请<a href="../" class="alert-link">戳这里~</a>
+      </div>
+      <ul class="clearfix">
+      <li ng-repeat="item in list| filter:search" ng-click="modeal(item)"><i class="ar ar-{{item.cls}}"></i><p ng-bind="item.cls">
+          加载中···
+        </p></li>
+      </ul>
+      <!-- Modal -->
+      <div class="modal fade" ng-class="{'in':click}" id="myModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" ng-click="close()"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">{{title}}</h4>
+            </div>
+            <div class="modal-body clearfix">
+              <div class="col-xs-12 clearfix">
+                <i class="ar ar-{{class}}" style="font-size:46px"></i>
+                <i class="ar ar-{{class}}" style="font-size:34px"></i>
+                <i class="ar ar-{{class}}" style="font-size:22px"></i>
+              </div>
+              <br><br><br><br>
+              <div class="col-xs-12 clearfix"><code>&lt;i class="ar ar-{{class}}"&gt;&lt;/i&gt;</code></div>
+              <br><br>
+              <div class="col-xs-12 clearfix">Unicode : {{unicode}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="footer">
+      <div class="container">
+        <p><span class="glyphicon glyphicon-heart"></span> from the Art-Reactor team</p>
+      </div>
+    </div>
+    <script src="art-reactor.js"></script>
+
+    <script src="http://cdn.bootcss.com/angular.js/1.4.1/angular.js"></script>
+
+    <script>
+      angular.module('FontReactor',[])
+      .controller('MainCtrl', ['$scope','$http',function($scope,$http){
+        $scope.test = 'holle word!';
+        $scope.list = data;
+        $scope.click = false;
+        $scope.modeal = function(item){
+          $scope.click = true;
+          $scope.title = item.des;
+          $scope.class = item.cls;
+          $scope.unicode = '\\' + item.cont;
+          angular.element(document.getElementById('myModal')).css({'display':'block'})
+        }
+        $scope.close = function(){
+          $scope.click = false;
+          angular.element(document.getElementById('myModal')).css({'display':'none'})
+        }
+      }]);
+    </script>
+</body>
+</html>
