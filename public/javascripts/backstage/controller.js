@@ -48,6 +48,18 @@ doraApp.controller('contentList', ['$scope', '$http', function($scope, $http) {
       initPagination($scope, $http);
     });
   };
+  //商品上下架
+  $scope.sellStateContent = function(id, m) {
+    angularHttpGet($http, "/admin/manage/ContentList/sellStateContent?uid=" + id + "&sellState=" + m, function() {
+      initPagination($scope, $http);
+    });
+  };
+  //显示控制
+  $scope.stateContent = function(id, m) {
+    angularHttpGet($http, "/admin/manage/ContentList/stateContent?uid=" + id + "&state=" + m, function() {
+      initPagination($scope, $http);
+    });
+  };
 }]);
 
 //管理员用户列表

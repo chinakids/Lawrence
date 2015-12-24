@@ -30,19 +30,29 @@ router.get('/', function(req, res, next) {
     '</ul>'
   );
 });
+//获取总页数
+router.get('/getTotalCount', function(req, res, next) {
+  var page = parseInt(req.query.page) || 1,
+      pageLen = req.query.pageLen || 10;
+  var totalCount = '';
+  Content.getTotalCount(pageLen,function(count){
+    totalCount = count;
+    res.send({
+      'title' : '总页数获取接口',
+      'result' : totalCount
+    })
+  })
+});
 //分页获取
 router.get('/pagination', function(req, res, next) {
   var page = parseInt(req.query.page) || 1,
       pageLen = req.query.pageLen || 10;
   console.log(req.query)
   var totalCount = '';
-  Content.getTotalCount(pageLen,function(count){
-    totalCount = count;
-    Content.getlist(page - 1,pageLen,function(result){
-      res.send({
-        'total' : totalCount,
-        'result' : result
-      })
+  Content.getlist(page - 1,pageLen,function(result){
+    res.send({
+      'title' : '分页获取接口',
+      'result' : result
     })
   })
 });

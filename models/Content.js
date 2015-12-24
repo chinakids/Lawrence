@@ -127,7 +127,7 @@ ContentSchema.statics = {
   getlist: function(page,pageLen,callBack){
     Content
       .find({state:true})
-      .populate('contentTemp')
+      .populate('category')
       .sort('-date')
       .skip(page * pageLen)
       .limit(pageLen)

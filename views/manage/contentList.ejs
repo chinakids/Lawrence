@@ -30,7 +30,7 @@
                         <th>联系方式</th>
                         <th>推荐</th>
                         <th>点击</th>
-                        <th>显示</th>
+                        <th>状态</th>
                         <th>发布人</th>
                         <th>操作</th>
                     </tr>
@@ -56,15 +56,26 @@
                         <td ng-class="{true:'text-danger'}[content.isTop==1]"><i class="fa fa-fw fa-flag"></i></td>
                         <td ng-bind="content.clickNum"></td>
                         <td ng-switch on="content.state">
-                            <span ng-switch-when="true"><a href="" class="label label-success">true</a></span>
-                            <span ng-switch-when="false"><a href="" class="label label-danger">false</a></span>
+                            <span ng-switch-when="true"><a href="" class="label label-success">显示</a></span>
+                            <span ng-switch-when="false"><a href="" class="label label-danger">隐藏</a></span>
                         </td>
                         <td ng-bind="content.author"></td>
                         <td>
                             <a href="/admin/manage/content/edit/{{content.type}}/{{content._id}}" role="button"  title="编辑" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></a>
+
                             <a href="###" role="button"  title="推荐" ng-click="topContent(content._id,1)" class="btn btn-warning btn-xs" ng-show="content.isTop == 0"><i class="fa fa-thumbs-o-up"></i></a>
-                            <a href="###" role="button"  title="取消推荐" ng-click="topContent(content._id,0)" class="btn btn-default btn-xs" ng-show="content.isTop == 1"><i class="fa fa-thumbs-o-down"></i></a>
-                            <button class="btn btn-default btn-xs" type="button" title="删除" ng-click="delOneItem(content._id)"><i class="fa fa-trash-o"></i></button>
+
+                            <a href="javascript:;" role="button"  title="取消推荐" ng-click="topContent(content._id,0)" class="btn btn-default btn-xs" ng-show="content.isTop == 1"><i class="fa fa-thumbs-o-down"></i></a>
+
+                            <a href="javascript:;" role="button"  title="上架" ng-click="sellStateContent(content._id,0)" class="btn btn-default btn-xs" ng-show="content.sellState == 1"><i class="fa fa-cloud-upload"></i></a>
+
+                            <a href="javascript:;" role="button"  title="下架" ng-click="sellStateContent(content._id,1)" class="btn btn-warning btn-xs" ng-show="content.sellState == 0"><i class="fa fa-cloud-download"></i></a>
+
+                            <a href="javascript:;" role="button"  title="关闭显示" ng-click="stateContent(content._id,0)" class="btn btn-default btn-xs" ng-show="content.state == 1"><i class="fa fa-eye-slash"></i></a>
+
+                            <a href="javascript:;" role="button"  title="显示" ng-click="stateContent(content._id,1)" class="btn btn-warning btn-xs" ng-show="content.state == 0"><i class="fa fa-eye"></i></a>
+
+                            <button class="btn btn-danger btn-xs" type="button" title="删除" ng-click="delOneItem(content._id)"><i class="fa fa-trash-o"></i></button>
                         </td>
                     </tr>
                 </table>

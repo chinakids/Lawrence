@@ -178,8 +178,12 @@
           <li class="header">Main Menu</li>
           <!-- Optionally, you can add icons to the links -->
           <input type="hidden" id="currentCate" value="<%= bigCategory %>" />
-
-          <li class="treeview active" cid="contentManage">
+          <li class="treeview active" cid="sysTemManage">
+            <a href="/amdin/">
+              <span>控制台</span>
+            </a>
+          </li>
+          <li class="treeview" cid="contentManage">
             <a href="#">
               <span>商品管理</span> <i class="fa fa-angle-left pull-right"></i></a>
             <ul class="treeview-menu">
@@ -221,7 +225,7 @@
             </ul> -->
 
           </li>
-          <li class="treeview" cid="sysTemManage">
+          <li class="treeview">
             <a href="#">
               <span>系统管理</span> <i class="fa fa-angle-left pull-right"></i></a>
             <ul class="treeview-menu">

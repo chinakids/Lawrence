@@ -786,6 +786,50 @@ var returnAdminRouter = function(io) {
     }
 
   });
+  //商品售出状态切换
+  router.get('/manage/ContentList/sellStateContent', function(req, res, next) {
+    var params = url.parse(req.url, true);
+    var contentId = params.query.uid;
+    var sellState = Number(params.query.sellState);
+    if (shortid.isValid(contentId)) {
+      if (adminFunc.checkAdminPower(req, settings.CONTENTLIST[0] + '_top')) {
+        Content.update({
+          _id: contentId
+        }, {
+          'sellState': sellState
+        }, function(err, result) {
+          if (err) throw err;
+          res.end("success");
+        })
+      } else {
+        res.end('对不起，您无权执行该操作！');
+      }
+    } else {
+      res.end(settings.system_illegal_param);
+    }
+  });
+  //商品显示状态切换
+  router.get('/manage/ContentList/stateContent', function(req, res, next) {
+    var params = url.parse(req.url, true);
+    var contentId = params.query.uid;
+    var state = Number(params.query.state);
+    if (shortid.isValid(contentId)) {
+      if (adminFunc.checkAdminPower(req, settings.CONTENTLIST[0] + '_top')) {
+        Content.update({
+          _id: contentId
+        }, {
+          'state': state
+        }, function(err, result) {
+          if (err) throw err;
+          res.end("success");
+        })
+      } else {
+        res.end('对不起，您无权执行该操作！');
+      }
+    } else {
+      res.end(settings.system_illegal_param);
+    }
+  });
 
 
 
