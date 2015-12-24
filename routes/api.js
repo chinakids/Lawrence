@@ -43,11 +43,10 @@ router.get('/getTotalCount', function(req, res, next) {
     })
   })
 });
-//分页获取
+//分页数据获取
 router.get('/pagination', function(req, res, next) {
   var page = parseInt(req.query.page) || 1,
       pageLen = req.query.pageLen || 10;
-  console.log(req.query)
   var totalCount = '';
   Content.getlist(page - 1,pageLen,function(result){
     var data = [];

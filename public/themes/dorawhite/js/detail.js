@@ -1,0 +1,3 @@
+/*! Lawrence - v1.0.9 - 2015-12-24 */
+(function(){$(function(){return $("a[rel=group]").fancybox({padding:"0",titleShow:!1,cyclic:!0,overlayOpacity:"0.8",overlayColor:"#000",centerOnScroll:"true"}),$(".jq-action-btn").mouseover(function(){return $(this).find(".action-buttons").css({visibility:"visible"})}),$(".jq-action-btn").mouseout(function(){return $(this).find(".action-buttons").css({visibility:"hidden"})})})}).call(this);
+//# sourceMappingURL=detail.js.map

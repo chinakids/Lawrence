@@ -20,6 +20,7 @@
     "Art-Reactor": "art-reactor#*",
     "normalize-css": "normalize.css#~3.0.3",
     "jquery": "~2.1.4",
-    "handlebars": "~4.0.5"
+    "handlebars": "~4.0.5",
+    "fancyBox": "https://github.com/fancyapps/fancyBox.git#~2.1.5"
   }
 }

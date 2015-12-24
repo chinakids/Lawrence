@@ -1,4 +1,248 @@
-<script>
+<!-- 详情页模板 -->
+
+<script src="/themes/<%=staticforder%>/js/detail.js?vesion=<%=siteConfig.version%>"></script>
+
+<div class="wrapper" style="padding-top:70px;">
+  <div class="container">
+    <div class="col-xs-8 pull-left cf">
+      <div class="p-left-box">
+          <div class="title">
+              <!-- <a href="/themes/<%=staticforder%>/javascript:;" class="btn btn-default pull-left">收藏</a> -->
+              <h3><%=documentInfo.title%></h3>
+          </div>
+          <div class="bigimg-box">
+              <img src="<%=documentInfo.sImg%>" alt="">
+          </div>
+          <div class="title">
+            <a href="javascript:;" class="btn btn-default pull-left"><span class="ar ar-heart"></span> 喜欢(<%= documentInfo.likeNum %>)</a>
+            <a href="javascript:;" class="btn btn-default pull-left"><span class="ar ar-eye"></span> 查看(<%= documentInfo.clickNum %>)</a>
+            <a rel="group" href="<%=documentInfo.sImg%>" class="btn btn-default pull-right" title="<%=documentInfo.title%>"><span class="ar ar-amplify-c"></span> 放大</a>
+            <a href="javascript:;" class="btn btn-default pull-right"><span class="ar ar-info-b"></span> 举报</a>
+          </div>
+      </div>
+      <div class="p-left-box">
+          <!-- <div class="p-left-tip">來自海境。<山海化形>－夫諸.</div> -->
+          <div class="col-xs-12 p-left-re clearfix pull-left">
+              <textarea name="" placeholder="添加评论"></textarea>
+              <div class="re-contorl">
+                <a href="/themes/<%=staticforder%>/javascript:;" class="btn btn-default pull-right">回复</a>
+              </div>
+          </div>
+          <div class="p-left-re-list pull-left">
+              <dl class="user-info clearfix jq-action-btn">
+                <dt class="pull-left"><img src="/themes/<%=staticforder%>/images/eq/bg-small-head.png" alt=""></dt>
+                <dd>
+                  <p><a href="/themes/<%=staticforder%>/#">季子乌</a> - <span>评论于5分钟前</span>
+                  </p>
+                  <div class="action-buttons">
+                      <a href="javascript:;" class="reply-button" title="回复" data-username="季子乌"></a>
+                      <a href="javascript:;" class="delete-button" title="删除"></a>
+                  </div>
+                  <div class="re-txt-box pull-left">
+                      <p>很好看很好看！我曾今跨过山河大海，也穿过人山人海，我曾经拥有着一切，转眼都飘散如烟,我曾经失落失望失掉所有方向 ,直到看见平凡才是唯一的答案</p>
+                  </div>
+                </dd>
+              </dl>
+              <dl class="user-info clearfix jq-action-btn">
+                <dt class="pull-left">
+                  <img src="/themes/<%=staticforder%>/images/eq/bg-small-head.png" alt="">
+                </dt>
+                <dd>
+                  <p><a href="/themes/<%=staticforder%>/#">季子乌</a> - <span>评论于10分钟前</span></p>
+                  <div class="action-buttons">
+                      <a href="javascript:;" class="reply-button" title="回复" data-username="季子乌"></a>
+                      <a href="javascript:;" class="delete-button" title="删除"></a>
+                  </div>
+                  <div class="re-txt-box pull-left">
+                      <p><a href="/themes/<%=staticforder%>/#">@王大锤</a> 很好看很好看！我曾今跨过山河大海，也穿过人山人海，我曾经拥有着一切，转眼都飘散如烟,我曾经失落失望失掉所有方向 ,直到看见平凡才是唯一的答案</p>
+                  </div>
+                </dd>
+              </dl>
+          </div>
+
+      </div>
+    </div>
+      <div class="col-xs-4 pull-left cf">
+          <div class="p-right-box">
+            <div class="user-info">
+                <img src="<%=documentInfo.authorLogo%>" alt="">
+                <p><a href="#"><%=documentInfo.author%></a></p>
+                <p>发布于 <%=myDateFormat(documentInfo.date)%></p>
+            </div>
+          </div>
+          <div class="p-right-box">
+              <!-- <div class="title">ACG<a href="/themes/<%=staticforder%>/javascript:;" class="btn btn-default pull-right">关注</a></div> -->
+            <div class="p-tip"><%=documentInfo.discription%></div>
+            <div class="html"><%-documentInfo.comments%></div>
+          </div>
+          <div class="p-right-box">
+              <div class="title ft-140">标签 | TAG</div>
+              <ul class="tag-list">
+                  <li><a href="/themes/<%=staticforder%>/">唯美</a></li>
+                  <li><a href="/themes/<%=staticforder%>/">小清新</a></li>
+                  <li><a href="/themes/<%=staticforder%>/">ACG</a></li>
+                  <li><a href="/themes/<%=staticforder%>/">美女</a></li>
+                  <li><a href="/themes/<%=staticforder%>/">动漫</a></li>
+                  <li><a href="/themes/<%=staticforder%>/">漫画</a></li>
+                  <li><a href="/themes/<%=staticforder%>/">同人</a></li>
+              </ul>
+          </div>
+          <div class="p-right-box">
+              <div class="title ft-140">10人喜欢 | LIKE</div>
+              <div class="p-right-like-list">
+                  <ul>
+                      <li><a href="/themes/<%=staticforder%>/#"><img src="/themes/<%=staticforder%>/images/eq/bg-small-head.png" alt="" title="用户名"></a></li>
+                      <li><a href="/themes/<%=staticforder%>/#"><img src="/themes/<%=staticforder%>/images/eq/bg-small-head.png" alt="" title="用户名"></a></li>
+                      <li><a href="/themes/<%=staticforder%>/#"><img src="/themes/<%=staticforder%>/images/eq/bg-small-head.png" alt="" title="用户名"></a></li>
+                      <li><a href="/themes/<%=staticforder%>/#"><img src="/themes/<%=staticforder%>/images/eq/bg-small-head.png" alt="" title="用户名"></a></li>
+                      <li><a href="/themes/<%=staticforder%>/#"><img src="/themes/<%=staticforder%>/images/eq/bg-small-head.png" alt="" title="用户名"></a></li>
+                      <li><a href="/themes/<%=staticforder%>/#"><img src="/themes/<%=staticforder%>/images/eq/bg-small-head.png" alt="" title="用户名"></a></li>
+                      <li><a href="/themes/<%=staticforder%>/#"><img src="/themes/<%=staticforder%>/images/eq/bg-small-head.png" alt="" title="用户名"></a></li>
+                      <li><a href="/themes/<%=staticforder%>/#"><img src="/themes/<%=staticforder%>/images/eq/bg-small-head.png" alt="" title="用户名"></a></li>
+                      <li><a href="/themes/<%=staticforder%>/#"><img src="/themes/<%=staticforder%>/images/eq/bg-small-head.png" alt="" title="用户名"></a></li>
+                      <li><a href="/themes/<%=staticforder%>/#"><img src="/themes/<%=staticforder%>/images/eq/bg-small-head.png" alt="" title="用户名"></a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div class="cf pull-left p-recommended" style="width:100%">
+          <div class="title ft-140">
+              同类推荐
+          </div>
+          <div class="pubu">
+          <ul class="pubu-wrap clearfix js-pubu">
+              <li>
+                  <div class="pubu-img-box">
+                  <a href="/themes/<%=staticforder%>/#" class="pubu-img"><img src="/themes/<%=staticforder%>/images/eq/eq-head.png"/>
+                  </a>
+                  <p class="pubu-num">
+                      <a href="/themes/<%=staticforder%>/javascript:;" class="num1-hover"><span class="pubu-num1">18</span></a>
+                      <a href="/themes/<%=staticforder%>/javascript:;" class="num2-hover"><span class="pubu-num2">30</span></a>
+                  </p>
+                  </div>
+                  <div>
+                      <a href="/themes/<%=staticforder%>/#" class="pubu-img-name">激情畅想“青春派“威丝曼</a>
+                      <p class="pubu-sort">画板 | ACG</p>
+                      <a href="/themes/<%=staticforder%>/#" class="pubu-method clearfix cf"><span style="background-image:url(images/eq/bg-small-head.png);"></span><b>woshiyonghuming</b></a>
+                  </div>
+              </li>
+              <li>
+                  <div class="pubu-img-box">
+                  <a href="/themes/<%=staticforder%>/#" class="pubu-img"><img src="/themes/<%=staticforder%>/images/eq/pubu4.png"/>
+                      </a>
+                  <p class="pubu-num">
+                      <a href="/themes/<%=staticforder%>/javascript:;" class="num1-hover"><span class="pubu-num1">18</span></a>
+                      <a href="/themes/<%=staticforder%>/javascript:;" class="num2-hover"><span class="pubu-num2">30</span></a>
+                  </p>
+                  </div>
+                  <div>
+                      <a href="/themes/<%=staticforder%>/#" class="pubu-img-name">激情畅想“青春派“威丝曼</a>
+                      <p class="pubu-sort">画板 | ACG</p>
+
+                      <a href="/themes/<%=staticforder%>/#" class="pubu-method clearfix cf"><span style="background-image:url(images/eq/bg-small-head.png);"></span><b>woshiyonghuming</b></a>
+                  </div>
+              </li>
+              <li>
+              <div class="pubu-img-box">
+                  <a href="/themes/<%=staticforder%>/#" class="pubu-img"><img src="/themes/<%=staticforder%>/images/eq/pubu2.png"/>
+                  </a>
+                  <p class="pubu-num">
+                      <a href="/themes/<%=staticforder%>/javascript:;" class="num1-hover"><span class="pubu-num1">18</span></a>
+                      <a href="/themes/<%=staticforder%>/javascript:;" class="num2-hover"><span class="pubu-num2">30</span></a>
+                  </p>
+                  </div>
+                  <div>
+                      <a href="/themes/<%=staticforder%>/#" class="pubu-img-name">激情畅想“青春派“威丝曼</a>
+                      <p class="pubu-sort">画板 | ACG</p>
+                      <a href="/themes/<%=staticforder%>/#" class="pubu-method clearfix cf"><span style="background-image:url(images/eq/bg-small-head.png);"></span><b>woshiyonghuming</b></a>
+                  </div>
+              </li>
+              <li>
+              <div class="pubu-img-box">
+                  <a href="/themes/<%=staticforder%>/#" class="pubu-img"><img src="/themes/<%=staticforder%>/images/eq/eq-head.png"/>
+                      </a>
+                  <p class="pubu-num">
+                      <a href="/themes/<%=staticforder%>/javascript:;" class="num1-hover"><span class="pubu-num1">18</span></a>
+                      <a href="/themes/<%=staticforder%>/javascript:;" class="num2-hover"><span class="pubu-num2">30</span></a>
+                  </p>
+                  </div>
+                  <div>
+                      <a href="/themes/<%=staticforder%>/#" class="pubu-img-name">激情畅想“青春派“威丝曼</a>
+                      <p class="pubu-sort">画板 | ACG</p>
+
+                      <a href="/themes/<%=staticforder%>/#" class="pubu-method clearfix cf"><span style="background-image:url(images/eq/bg-small-head.png);"></span><b>woshiyonghuming</b></a>
+                  </div>
+              </li>
+              <li>
+              <div class="pubu-img-box">
+                  <a href="/themes/<%=staticforder%>/#" class="pubu-img"><img src="/themes/<%=staticforder%>/images/eq/eq-pubu1.png"/>
+                      </a>
+                  <p class="pubu-num">
+                      <a href="/themes/<%=staticforder%>/javascript:;" class="num1-hover"><span class="pubu-num1">18</span></a>
+                      <a href="/themes/<%=staticforder%>/javascript:;" class="num2-hover"><span class="pubu-num2">30</span></a>
+                  </p>
+                  </div>
+                  <div>
+                      <a href="/themes/<%=staticforder%>/#" class="pubu-img-name">激情畅想“青春派“威丝曼</a>
+                      <p class="pubu-sort">画板 | ACG</p>
+
+                      <a href="/themes/<%=staticforder%>/#" class="pubu-method clearfix cf"><span style="background-image:url(images/eq/bg-small-head.png);"></span><b>woshiyonghuming</b></a>
+                  </div>
+              </li>
+              <li>
+              <div class="pubu-img-box">
+                  <a href="/themes/<%=staticforder%>/#" class="pubu-img"><img src="/themes/<%=staticforder%>/images/eq/eq-head.png"/>
+                      </a>
+                  <p class="pubu-num">
+                      <a href="/themes/<%=staticforder%>/javascript:;" class="num1-hover"><span class="pubu-num1">18</span></a>
+                      <a href="/themes/<%=staticforder%>/javascript:;" class="num2-hover"><span class="pubu-num2">30</span></a>
+                  </p>
+                  </div>
+                  <div>
+                      <a href="/themes/<%=staticforder%>/#" class="pubu-img-name">激情畅想“青春派“威丝曼</a>
+                      <p class="pubu-sort">画板 | ACG</p>
+
+                      <a href="/themes/<%=staticforder%>/#" class="pubu-method clearfix cf"><span style="background-image:url(images/eq/bg-small-head.png);"></span><b>woshiyonghuming</b></a>
+                  </div>
+              </li>
+              <li>
+              <div class="pubu-img-box">
+                  <a href="/themes/<%=staticforder%>/#" class="pubu-img"><img src="/themes/<%=staticforder%>/images/eq/pubu4.png"/>
+                      </a>
+                  <p class="pubu-num">
+                      <a href="/themes/<%=staticforder%>/javascript:;" class="num1-hover"><span class="pubu-num1">18</span></a>
+                      <a href="/themes/<%=staticforder%>/javascript:;" class="num2-hover"><span class="pubu-num2">30</span></a>
+                  </p>
+                  </div>
+                  <div>
+                      <a href="/themes/<%=staticforder%>/#" class="pubu-img-name">激情畅想“青春派“威丝曼</a>
+                      <p class="pubu-sort">画板 | ACG</p>
+
+                      <a href="/themes/<%=staticforder%>/#" class="pubu-method cf"><span style="background-image:url(images/eq/bg-small-head.png);"></span><b>woshiyonghuming</b></a>
+                  </div>
+              </li>
+              <li>
+              <div class="pubu-img-box">
+                  <a href="/themes/<%=staticforder%>/#" class="pubu-img"><img src="/themes/<%=staticforder%>/images/eq/pubu2.png"/>
+                      </a>
+                  <p class="pubu-num">
+                      <a href="/themes/<%=staticforder%>/javascript:;" class="num1-hover"><span class="pubu-num1">18</span></a>
+                      <a href="/themes/<%=staticforder%>/javascript:;" class="num2-hover"><span class="pubu-num2">30</span></a>
+                  </p>
+                  </div>
+                  <div>
+                      <a href="/themes/<%=staticforder%>/#" class="pubu-img-name">激情畅想“青春派“威丝曼</a>
+                      <p class="pubu-sort">画板 | ACG</p>
+
+                      <a href="/themes/<%=staticforder%>/#" class="pubu-method cf"><span style="background-image:url(images/eq/bg-small-head.png);"></span><b>woshiyonghuming</b></a>
+                  </div>
+              </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <script>
     $(function(){
         new initSlides({
             adsId : 'Ek6MPRfbl',
@@ -7,7 +251,7 @@
     })
 </script>
 <div class="container">
-	<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"3","bdPos":"right","bdTop":"250"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+	<script>window.-bd-share-config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"3","bdPos":"right","bdTop":"250"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 
     <script>
         (function(){
@@ -49,4 +293,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->

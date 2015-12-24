@@ -70,6 +70,7 @@ module.exports = (grunt) ->
   #注冊任务
   grunt.registerTask 'default', [
     'wiredep',
+    'uglify',
     'copy',
     'watch'
   ]
