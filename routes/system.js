@@ -65,14 +65,6 @@ router.post('/upload', function(req, res, next) {
                 console.log('done');
               }
             });
-          } else if (fileKey == 'plugTopImg') { // 插件主题图片
-            gm(input).resize(270, 162, '!').autoOrient().write(out, function(err) {
-              if (err) {
-                console.log(err);
-              } else {
-                console.log('done');
-              }
-            });
           } else if (fileKey == 'userlogo') { // 用户头像
             gm(input).resize(100, 100, '!').autoOrient().write(out, function(err) {
               if (err) {
@@ -101,8 +93,8 @@ router.post('/upload', function(req, res, next) {
     };
     var sout = JSON.stringify(out);
     //        返回文件路径
-    if (fileKey == 'ctTopImg' || fileKey == 'plugTopImg' || fileKey == 'userlogo') {
-      res.end('/upload/smallimgs/' + newFileName);
+    if (fileKey == 'ctTopImg' || fileKey == 'userlogo') {
+      res.end('/upload/images/' + newFileName);
     } else {
       res.end('/upload/images/' + newFileName);
     }

@@ -26,8 +26,8 @@
                         <th>文章标题</th>
                         <th>创建时间</th>
                         <th>类目</th>
-                        <th>来源</th>
-                        <th>类型</th>
+                        <th>状态</th>
+                        <th>联系方式</th>
                         <th>推荐</th>
                         <th>点击</th>
                         <th>显示</th>
@@ -44,14 +44,14 @@
                         </td>
                         <td ng-bind="content.date | date : 'yyyy-MM-dd HH:mm:ss'"></td>
                         <td ng-bind="content.category.name"></td>
-                        <td ng-switch on="content.from">
-                            <span ng-switch-when="1">原创</span>
-                            <span ng-switch-when="2">转载</span>
+                        <td ng-switch on="content.sellState">
+                          <span ng-switch-when="0"><a href="" class="label label-success">待售</a></span>
+                          <span ng-switch-when="1"><a href="" class="label label-danger">售出</a></span>
                         </td>
-                        <td ng-switch on="content.type">
-                            <span ng-switch-when="content">文档</span>
-                            <!-- <span ng-switch-when="plug">插件</span> -->
-                            <span ng-switch-when="singer">其它</span>
+                        <td ng-switch on="content.callWay" title="{{content.callString}}">
+                          <span ng-switch-when="0"><i class="fa fa-qq text-primary"></i> {{content.callString}}</span>
+                          <span ng-switch-when="1"><i class="fa fa-weixin text-success"></i> {{content.callString}}</span>
+                          <span ng-switch-when="2"><i class="fa fa-phone text-warning"></i> {{content.callString}}</span>
                         </td>
                         <td ng-class="{true:'text-danger'}[content.isTop==1]"><i class="fa fa-fw fa-flag"></i></td>
                         <td ng-bind="content.clickNum"></td>

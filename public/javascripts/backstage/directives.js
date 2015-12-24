@@ -84,7 +84,7 @@ doraApp.directive('ueditor', function($timeout) { //angular绑定ueditor
             // 'edittable', //表格属性
             // 'edittd', //单元格属性
             // 'link', //超链接
-            'emotion', //表情
+            //'emotion', //表情
             // 'spechars', //特殊字符
             // 'searchreplace', //查询替换
             // 'map', //Baidu地图
