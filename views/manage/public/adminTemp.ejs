@@ -48,6 +48,9 @@
   <script src="/javascripts/backstage/dora.backstage.js"></script>
   <link rel="stylesheet" href="/stylesheets/backstage/css/style.css" />
   <style>
+    textarea{
+       resize:vertical;
+    }
     .content .panel {
       background-color: transparent;
       border: none;
@@ -171,31 +174,9 @@
         <ul class="sidebar-menu">
           <li class="header">Main Menu</li>
           <!-- Optionally, you can add icons to the links -->
-          <input type="hidden" id="currentCate" value="<%= bigCategory%>" />
-          <li class="treeview active" cid="sysTemManage">
-            <a href="#">
-              <span>系统管理</span> <i class="fa fa-angle-left pull-right"></i></a>
-            <ul class="treeview-menu">
-              <li cid="sysTemManage_user"><a href="/admin/manage/adminUsersList"><i class="fa fa-user"></i> 系统用户管理</a></li>
-              <li cid="sysTemManage_uGroup"><a href="/admin/manage/adminGroupList"><i class="fa fa-group"></i> 用户组设定</a></li>
-              <li cid="sysTemManage_files"><a href="/admin/manage/filesList"><i class="fa fa-file-text"></i> 文件管理器</a></li>
-              <li cid="sysTemManage_data">
-                <a href="#"><i class="fa fa-cloud"></i> 数据管理<i class="fa fa-angle-left pull-right"></i></a>
-                <ul class="treeview-menu">
-                  <li cid="sysTemManage_data_1"><a href="/admin/manage/dataManage/m/backUpData"><i class="fa fa-copy"></i> 数据备份</a></li>
-                </ul>
-              </li>
-              <li cid="sysTemManage_logs"><a href="/admin/manage/systemLogs"><i class="fa fa-fw fa-clipboard"></i> 系统日志管理</a></li>
-            </ul>
-          </li>
-          <li class="treeview" cid="adManage">
-            <a href="#">
-              <span>广告投放</span> <i class="fa fa-angle-left pull-right"></i></a>
-            <ul class="treeview-menu">
-              <li cid="sysTemManage_ads"><a href="/admin/manage/adsList"><i class="fa fa-camera-retro"></i> 广告管理</a></li>
-            </ul>
-          </li>
-          <li class="treeview" cid="contentManage">
+          <input type="hidden" id="currentCate" value="<%= bigCategory %>" />
+
+          <li class="treeview active" cid="contentManage">
             <a href="#">
               <span>商品管理</span> <i class="fa fa-angle-left pull-right"></i></a>
             <ul class="treeview-menu">
@@ -210,6 +191,13 @@
               <span>会员管理</span> <i class="fa fa-angle-left pull-right"></i></a>
             <ul class="treeview-menu">
               <li cid="userManage_user"><a href="/admin/manage/regUsersList"><i class="fa fa-users"></i> 注册会员列表</a></li>
+            </ul>
+          </li>
+          <li class="treeview" cid="adManage">
+            <a href="#">
+              <span>广告投放</span> <i class="fa fa-angle-left pull-right"></i></a>
+            <ul class="treeview-menu">
+              <li cid="sysTemManage_ads"><a href="/admin/manage/adsList"><i class="fa fa-camera-retro"></i> 广告管理</a></li>
             </ul>
           </li>
           <li class="treeview" cid="templateManage">
@@ -229,6 +217,22 @@
               <li cid="contentManage_notice_2"><a href="/admin/manage/noticeManage/m/userNotice"><i class="fa fa-male"></i> 用户消息</a></li>
             </ul> -->
 
+          </li>
+          <li class="treeview" cid="sysTemManage">
+            <a href="#">
+              <span>系统管理</span> <i class="fa fa-angle-left pull-right"></i></a>
+            <ul class="treeview-menu">
+              <li cid="sysTemManage_user"><a href="/admin/manage/adminUsersList"><i class="fa fa-user"></i> 系统用户管理</a></li>
+              <li cid="sysTemManage_uGroup"><a href="/admin/manage/adminGroupList"><i class="fa fa-group"></i> 用户组设定</a></li>
+              <li cid="sysTemManage_files"><a href="/admin/manage/filesList"><i class="fa fa-file-text"></i> 文件管理器</a></li>
+              <li cid="sysTemManage_data">
+                <a href="#"><i class="fa fa-cloud"></i> 数据管理<i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                  <li cid="sysTemManage_data_1"><a href="/admin/manage/dataManage/m/backUpData"><i class="fa fa-copy"></i> 数据备份</a></li>
+                </ul>
+              </li>
+              <li cid="sysTemManage_logs"><a href="/admin/manage/systemLogs"><i class="fa fa-fw fa-clipboard"></i> 系统日志管理</a></li>
+            </ul>
           </li>
         </ul>
         <!-- /.sidebar-menu -->

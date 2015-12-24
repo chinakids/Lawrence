@@ -61,7 +61,11 @@ var ContentSchema = new Schema({
     type: Number,
     default: 0
   },//交易状态 0为待售 1为售出
-  phone:{
+  callWay:{
+    type: Number,
+    default: 0
+  },//联系方式 0为QQ 1为微信  2为电话
+  callString:{
     type: String
   },
   location:{

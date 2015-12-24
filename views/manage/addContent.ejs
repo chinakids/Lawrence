@@ -12,7 +12,7 @@
                 <form role="form" class="form-horizontal" name="myForm" ng-submit="processForm(myForm.$valid)" novalidate>
                     <div class="form-group">
                         <label class="control-label col-sm-3">文章标题</label>
-                        <div class="col-sm-5">
+                        <div class="col-sm-8">
                             <input type="text" class="form-control input-sm" name="title" ng-minlength="5" ng-maxlength="50" ng-model="formData.title" required/>
                             <label for="inputError" class="control-label text-danger" ng-show="myForm.title.$invalid && !myForm.title.$pristine"><i class="fa fa-times-circle-o"></i> 5-50个非特殊字符</label>
 
@@ -40,21 +40,21 @@
                         <label class="control-label col-sm-3">状态</label>
                         <div class="radio col-sm-4">
                             <label>
-                                <input type="radio" checked class="mini" value="0" name="sellState" ng-model="formData.from"/>待售&nbsp;
+                                <input type="radio" checked class="mini" value="0" name="sellState" ng-model="formData.sellState"/>待售&nbsp;
                             </label>
                             <label>
-                                <input type="radio" class="mini" name="sellState" value="1" ng-model="formData.from" />售出
+                                <input type="radio" class="mini" name="sellState" value="1" ng-model="formData.sellState" />售出
                             </label>
                         </div>
                     </div>
-                    <div class="form-group hide">
+                    <!-- <div class="form-group hide">
                         <label class="control-label col-sm-3">发布</label>
                         <div class="checkbox col-sm-4">
                             <label>
                                 <input type="checkbox" checked class="mini" name="state" ng-model="formData.state"/>是
                             </label>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <label class="control-label col-sm-3">TAG标签</label>
                         <div class="col-sm-4">
@@ -72,7 +72,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-3">缩略图</label>
+                        <label class="control-label col-sm-3">主图</label>
                         <div class="col-sm-3">
                             <input type="file" name="uploadify" id="uploadContentImg" />
                             <img src="" alt="" width="120" height="120" class="img-thumbnail" id="myImg">
@@ -80,7 +80,7 @@
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-3">文章类别</label>
-                        <div class="col-sm-2">
+                        <div class="col-sm-4">
                             <div class="dropdown">
                                 <button id="dLabel" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i id="categoryName">请选择文章类别</i>
@@ -93,29 +93,43 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-3">联系电话</label>
-                        <div class="col-sm-5">
-                            <input type="text" class="form-control input-sm" name="phone" ng-minlength="6" ng-maxlength="16" ng-model="formData.phone" required/>
-                            <label for="inputError" class="control-label text-danger" ng-show="myForm.phone.$invalid && !myForm.phone.$pristine"><i class="fa fa-times-circle-o"></i>输入联系卖家的方式</label>
+                        <label class="control-label col-sm-3">沟通工具</label>
+                        <div class="radio col-sm-4">
+                            <label>
+                                <input type="radio" checked class="mini" value="0" name="callWay" ng-model="formData.callWay"/>QQ&nbsp;
+                            </label>
+                            <label>
+                                <input type="radio" class="mini" name="callWay" value="1" ng-model="formData.callWay" />微信&nbsp;
+                            </label>
+                            <label>
+                                <input type="radio" class="mini" name="callWay" value="2" ng-model="formData.callWay" />电话&nbsp;
+                            </label>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-3">交易地点</label>
-                        <div class="col-sm-5">
+                        <label class="control-label col-sm-3">联系方式</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control input-sm" name="callString" ng-minlength="6" ng-maxlength="16" ng-model="formData.callString" placeholder="输入QQ、微信或者电话" required/>
+                            <label for="inputError" class="control-label text-danger" ng-show="myForm.callString.$invalid && !myForm.callString.$pristine"><i class="fa fa-times-circle-o"></i>输入QQ、微信或者电话</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">所在地</label>
+                        <div class="col-sm-8">
                             <input type="text" class="form-control input-sm" name="location" ng-minlength="2" ng-maxlength="60" ng-model="formData.location" required/>
                             <label for="inputError" class="control-label text-danger" ng-show="myForm.location.$invalid && !myForm.location.$pristine"><i class="fa fa-times-circle-o"></i>输入卖家的交易地点</label>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-3">关键字(SEO)</label>
-                        <div class="col-sm-5">
+                        <div class="col-sm-8">
                             <input type="text" class="form-control input-sm" name="keywords" ng-minlength="2" ng-maxlength="60" ng-model="formData.keywords" required/>
                             <label for="inputError" class="control-label text-danger" ng-show="myForm.keywords.$invalid && !myForm.keywords.$pristine"><i class="fa fa-times-circle-o"></i>60个字以内，多个关键字之间用逗号隔开</label>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-3">内容摘要(SEO)</label>
-                        <div class="col-sm-6">
+                        <div class="col-sm-8">
                             <textarea class="form-control input-sm" name="discription" ng-model="formData.discription" ng-minlength="15" ng-maxlength="140" required id="" cols="30" rows="6"></textarea>
                             <label for="inputError" class="control-label text-danger" ng-show="myForm.discription.$invalid && !myForm.discription.$pristine"><i class="fa fa-times-circle-o"></i> 15-140个非特殊字符</label>
                         </div>
