@@ -59,7 +59,6 @@ router.get("/sitemap.html", function(req, res, next) {
 
 //文档详情页面
 router.get('/details/:url', function(req, res, next) {
-
   var url = req.params.url;
   var currentId = url.split('.')[0];
   if (shortid.isValid(currentId)) {
@@ -71,7 +70,7 @@ router.get('/details/:url', function(req, res, next) {
         console.log(err)
       } else {
         if (result) {
-          //                更新访问量
+          //更新访问量
           result.clickNum = result.clickNum + 1;
           result.save(function() {
             var cateParentId = result.sortPath.split(',')[1];
@@ -80,7 +79,6 @@ router.get('/details/:url', function(req, res, next) {
                 $regex: new RegExp(cateParentId, 'i')
               }
             };
-
             siteFunc.getContentsCount(req, res, cateParentId, cateQuery, function(count) {
               siteFunc.renderToTargetPageByType(req, res, 'detail', {
                 count: count,

@@ -7,3 +7,31 @@
         </div>
     </div>
 </div>
+<script id="waterfall-tpl" type="text/x-handlebars-template">
+  {{#result}}
+    <li class="waterfall-item">
+      <div class="pubu-img-box">
+        <a href="/details/{{_id}}.html" class="pubu-img">
+          <img src="{{sImg}}"/>
+        </a>
+        <p class="pubu-num">
+          <span><i class="ar ar-tag"></i> {{category.name}}</span>
+          <a href="javascript:;" class="watch-num"><i class="ar ar-preview"></i> {{clickNum}}</a>
+          <a href="javascript:;" class="like-num"><i class="ar ar-heart"></i> {{likeNum}}</a>
+        </p>
+        {{#if sellState}}
+            <div class="sellout"></div>
+        {{/if}}
+      </div>
+      <div>
+        <a href="/details/{{_id}}.html" class="pubu-img-name" title="{{title}}">{{title}}</a>
+        <p class="pubu-sort" title="{{location}}"><i class="ar ar-location"></i>{{location}}</p>
+        <a href="#" class="pubu-method clearfix">
+          <span style="background-image:url({{authorLogo}});"></span>
+          <b>{{author}}</b>
+          <b class="price">$ {{price}}</b>
+        </a>
+      </div>
+    </li>
+  {{/result}}
+</script>

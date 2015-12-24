@@ -125,9 +125,11 @@ var siteFunc = {
   },
 
   getRecommendListData: function(cateQuery, contentCount) {
+    cateQuery.sellState = 0;
+    cateQuery.state = 1;
     return Content.find(cateQuery).sort({
-      'date': -1
-    }).skip(Math.floor(contentCount * Math.random())).limit(4);
+      'date': -1,
+    }).populate('category').skip(Math.floor(contentCount * Math.random())).limit(5);
   },
 
   getFriendLink: function() {

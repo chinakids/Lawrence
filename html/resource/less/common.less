@@ -503,6 +503,65 @@ textarea{
     margin: 0;
     padding: 15px 0 5px 0;
     position: relative;
+  }
+  .bigimg-box{
+    img{
+      max-width: 100%;
+      height: auto;
+      margin: auto;
+    }
+  }
+
+}
+.p-left-re{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  img{
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-right: 10px;
+  }
+  textarea{
+    width: 100%;
+    height: 50px;
+    min-height: 50px;
+    float: left;
+    border: 1px solid @gray-lighter;
+    border-radius: 5px;
+    padding: 5px;
+  }
+  .re-contorl{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    margin: 10px 0;
+    .btn{
+      margin-top: 3px;
+    }
+  }
+}
+.re-txt-box{
+  width: 100%;
+  p{
+    margin: 0;
+    line-height: 25px;
+    a,a:hover{
+      color: rgb(68,181,223);
+    }
+  }
+}
+.p-left-re-list{
+  width: 100%;
+  border-top: 1px solid @gray-lighter;
+  .user-info{
+    position: relative;
+    padding: 15px 0 5px;
+    p span{
+      color:@gray-light;
+    }
     dd{
       padding-left: 60px;
     }
@@ -516,59 +575,6 @@ textarea{
       line-height: 20px;
     }
   }
-  .bigimg-box{
-    img{
-      max-width: 100%;
-      height: auto;
-      margin: auto;
-    }
-  }
-  .p-left-re{
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    img{
-      width: 50px;
-      height: 50px;
-      float: left;
-      margin-right: 10px;
-    }
-    textarea{
-      width: 100%;
-      height: 50px;
-      min-height: 50px;
-      float: left;
-      border: 1px solid @gray-lighter;
-      border-radius: 5px;
-      padding: 5px;
-    }
-    .re-contorl{
-      width: 100%;
-      height: 40px;
-      line-height: 40px;
-      float: left;
-      margin: 10px 0;
-    }
-    .re-contorl{
-      .btn{
-        margin-top: 3px;
-      }
-    }
-  }
-  .re-txt-box{
-    width: 100%;
-    p{
-      margin: 0;
-      line-height: 25px;
-      a,a:hover{
-        color: rgb(68,181,223);
-      }
-    }
-  }
-}
-.p-left-re-list{
-  width: 100%;
-  border-top: 1px solid @gray-lighter;
   li{
     margin: 10px 0;
     position: relative;
@@ -616,11 +622,17 @@ textarea{
   box-shadow:@shadowOut;
   background: @white url(../images/bg/border.png) 0 top repeat-x;
   border-radius: 2px 2px 0 0;
+  overflow: hidden;
   .p-tip{
     padding: 10px;
     margin: 0 auto;
     margin-bottom: 10px;
     background: @gray-lighter;
+    .price b{
+      font-size: 26px;
+      color:@orange;
+      font-weight: 800;
+    }
   }
   .user-info{
     height: auto;
@@ -686,8 +698,6 @@ textarea{
     margin-bottom: 15px;
   }
 }
-
-
 
 /*画板单页*/
 .top-description{
