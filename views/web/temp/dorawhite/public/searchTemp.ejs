@@ -1,20 +1,49 @@
-<div class="container">
-    <div class="col-md-12" style="margin-top: 50px;margin-bottom: 30px;">
-        <div class="row">
-            <form action="/content/searchResult/items">
-                <div class="col-md-11">
-                <input class="form-control search-input" type="text" placeholder="请输入关键字" name="searchKey" value="<%=pageInfo.searchKey%>">
-                </div>
-                <div class="col-md-1">
-                    <button type="submit" class="btn btn-default">搜索</button>
-                </div>
-            </form>
-        </div>
+<!-- 搜索 -->
+
+<script src="/themes/<%=staticforder%>/js/search.js?vesion=<%=siteConfig.version%>"></script>
+
+<div class="wrapper" style="padding-top:70px;">
+  <div class="container">
+    <div class="top-description clearfix">
+      <div class="title clearfix">
+        <b>搜索结果：</b><%=pageInfo.searchKey%>
+      </div>
     </div>
-    <div class="col-md-12 min-hight">
-        <div class="row">
-            <% include itemListTemp %>
-            <% include pagination %>
-        </div>
+
+    <div class="pubu">
+      <%if(documentList.length>0){%>
+        <ul class="pubu-wrap clearfix js-pubu">
+          <%documentList.forEach(function(item){%>
+            <li class="waterfall-item">
+              <div class="pubu-img-box">
+                <a href="/details/<%=item._id%>.html" class="pubu-img">
+                  <img src="<%=item.sImg%>"/>
+                </a>
+                <p class="pubu-num">
+                  <span><i class="ar ar-tag"></i> <%=item.category.name%></span>
+                  <a href="javascript:;" class="watch-num"><i class="ar ar-preview"></i> <%=item.clickNum%></a>
+                  <a href="javascript:;" class="like-num"><i class="ar ar-heart"></i> <%=item.likeNum%></a>
+                </p>
+                <%if(item.sellState){%>
+                    <div class="sellout"></div>
+                <%}%>
+              </div>
+              <div>
+                <a href="/details/<%=item._id%>.html" class="pubu-img-name" title="<%=item.title%>"><%=item.title%></a>
+                <p class="pubu-sort" title="<%=item.location%>"><i class="ar ar-location"></i><%=item.location%></p>
+                <a href="#" class="pubu-method clearfix">
+                  <span style="background-image:url(<%=item.authorLogo%>);"></span>
+                  <b><%=item.author%></b>
+                  <b class="price">$ <%=item.price%></b>
+                </a>
+              </div>
+            </li>
+          <%})%>
+          </ul>
+      <%}else{%>
+        <div class="t-center pubu-tips" style="display:none">木有结果~</div>
+      <%}%>
+      <% include pagination %>
     </div>
+  </div>
 </div>

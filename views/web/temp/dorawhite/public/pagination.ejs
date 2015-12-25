@@ -1,6 +1,5 @@
-<!--分页模块-->
-<div class="pagenation text-center">
-    <ul>
+
+    <ul class="pagination cf">
         <%var localUrl;var param ='';%>
         <%if(pageType == 'index'){
             localUrl = "/page";
@@ -48,4 +47,3 @@
             <li><a href="<%=localUrl%>—<%=totalPage%>.html<%=param%>">»</a></li>
         <%}%>
     </ul>
-</div>

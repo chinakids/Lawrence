@@ -60,7 +60,7 @@ function querySearchResult(req, res) {
 
   var keyPr = [];
   var reKey = new RegExp(searchKey, 'i');
-  //    模糊查询名称和内容
+  //模糊查询名称和内容
   if (area === "tags") {
     keyPr = {
       'tags': {

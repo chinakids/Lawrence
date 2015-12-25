@@ -1,3 +1,3 @@
-/*! Lawrence - v1.0.9 - 2015-12-24 */
+/*! Lawrence - v1.0.9 - 2015-12-25 */
 (function(){$(function(){return $(window).scroll(function(){return $(document).scrollTop()>=280?$(".top-box").removeClass("blur"):$(".top-box").addClass("blur")}),$.get("/api/getTotalCount",function(a){return $(".js-pubu").waterfall({debug:!1,itemCls:"waterfall-item",gutterWidth:20,gutterHeight:20,colWidth:212,maxPage:a.result,loadingMsg:'<div class="t-center pubu-tips">加载更多...</div>',path:function(a){return"/api/pagination?page="+a},callbacks:{loadingFinished:function(a,b){return console.log(b),b?(a.hide(),$(".pubu-tips").show()):a.fadeOut()}}})})})}).call(this);
 //# sourceMappingURL=index.js.map

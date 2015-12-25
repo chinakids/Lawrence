@@ -184,13 +184,13 @@ var DbOpt = {
     var resultList;
     var resultNum;
     if (q && q.length > 1) { // 多条件只要其中一条符合
-      resultList = obj.find().or(q, filed).sort(sq).skip(startNum).limit(limit);
+      resultList = obj.find().or(q, filed).sort(sq).skip(startNum).limit(limit).populate('category');
       resultNum = obj.find().or(q, filed).count();
     } else {
-      resultList = obj.find(q, filed).sort(sq).skip(startNum).limit(limit);
+      resultList = obj.find(q, filed).sort(sq).skip(startNum).limit(limit).populate('category');
       resultNum = obj.find(q, filed).count();
     }
-    //        分页参数
+    //分页参数
     var pageInfo = {
       "totalItems": resultNum,
       "currentPage": page,
@@ -202,7 +202,6 @@ var DbOpt = {
       docs: resultList,
       pageInfo: pageInfo
     };
-
     return datasInfo;
   },
 
