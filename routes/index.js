@@ -107,6 +107,51 @@ router.get('/details/:url', function(req, res, next) {
 
 });
 
+router.post('/updatalike/:url', function(req, res, next) {
+  var url = req.params.url;
+  var currentId = url.split('.')[0];
+  if (shortid.isValid(currentId)) {
+    Content.findOne({
+      '_id': currentId,
+      'state': true
+    }).populate('category').exec(function(err, result) {
+      if (err) {
+        console.log(err)
+      } else {
+        if (result) {
+          //更新访问量
+          result.likeNum = result.likeNum + 1;
+          result.save(function() {
+            var cateParentId = result.sortPath.split(',')[1];
+            var cateQuery = {
+              'sortPath': {
+                $regex: new RegExp(cateParentId, 'i')
+              }
+            };
+            res.send({
+              'title':'喜欢成功',
+              'result':'success'
+            })
+          })
+        } else {
+          siteFunc.renderToTargetPageByType(req, res, 'error', {
+            info: '非法操作!',
+            message: settings.system_illegal_param,
+            page: 'do404'
+          });
+        }
+      }
+    });
+  } else {
+    siteFunc.renderToTargetPageByType(req, res, 'error', {
+      info: '非法操作!',
+      message: settings.system_illegal_param,
+      page: 'do500'
+    });
+  }
+
+});
+
 
 //分类列表页面  http://127.0.0.1/DoraCms___VylIn1IU-1.html
 router.get('/:defaultUrl', function(req, res, next) {

@@ -14,7 +14,7 @@
               <img src="<%=documentInfo.sImg%>" alt="">
           </div>
           <div class="title">
-            <a href="javascript:;" class="btn btn-default pull-left"><span class="ar ar-heart"></span> 喜欢(<%= documentInfo.likeNum %>)</a>
+            <a href="javascript:;" class="btn btn-default pull-left js-like" data-like="<%= documentInfo.likeNum %>"><span class="ar ar-heart"></span> 喜欢(<%= documentInfo.likeNum %>)</a>
             <a href="javascript:;" class="btn btn-default pull-left"><span class="ar ar-visible"></span> 查看(<%= documentInfo.clickNum %>)</a>
             <a rel="group" href="<%=documentInfo.sImg%>" class="btn btn-default pull-right" title="<%=documentInfo.title%>"><span class="ar ar-amplify-c"></span> 放大</a>
             <a href="javascript:;" class="btn btn-default pull-right"><span class="ar ar-info-b"></span> 举报</a>
@@ -42,7 +42,6 @@
               <% }else if(documentInfo.callWay == 3){ %>
               <p><i class="ar ar-phone full-left"></i> 电话：&nbsp;&nbsp;&nbsp;<%=documentInfo.callString %></p>
               <% } %>
-              <p><i class="ar ar-tip"></i> 描述：&nbsp;&nbsp;&nbsp;<%=documentInfo.discription%></p>
             </div>
             <div class="html"><%-documentInfo.comments%></div>
           </div>
@@ -54,8 +53,7 @@
                 <% } %>
               </ul>
           </div>
-          <div class="p-right-box">
-              <!-- <div class="p-left-tip">來自海境。<山海化形>－夫諸.</div> -->
+          <!-- <div class="p-right-box">
               <div class="col-xs-12 p-left-re clearfix pull-left">
                   <textarea name="" placeholder="添加评论"></textarea>
                   <div class="re-contorl">
@@ -94,7 +92,7 @@
                   </dl>
               </div>
 
-          </div>
+          </div> -->
           <!-- <div class="p-right-box">
               <div class="title ft-140"><%= documentInfo.likeNum %>人喜欢 | LIKE</div>
               <div class="p-right-like-list">
@@ -139,7 +137,7 @@
                 <%})%>
                 </ul>
             <%}else{%>
-              <div class="t-center pubu-tips" style="display:none">木有推荐啦~</div>
+              <div class="t-center pubu-tips">木有推荐啦~</div>
             <%}%>
 
       </div>

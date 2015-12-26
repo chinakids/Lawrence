@@ -1,3 +1,3 @@
-/*! Lawrence - v1.0.9 - 2015-12-25 */
+/*! Lawrence - v1.0.9 - 2015-12-26 */
 (function(){$(function(){return $("a[rel=group]").fancybox({padding:"0",titleShow:!1,cyclic:!0,overlayOpacity:"0.8",overlayColor:"#000",centerOnScroll:"true"}),$(".jq-action-btn").mouseover(function(){return $(this).find(".action-buttons").css({visibility:"visible"})}),$(".jq-action-btn").mouseout(function(){return $(this).find(".action-buttons").css({visibility:"hidden"})}),$(".js-pubu").waterfall({debug:!1,itemCls:"waterfall-item",gutterWidth:20,gutterHeight:20,colWidth:212,maxPage:1,loadingMsg:"",callbacks:{loadingFinished:function(a,b){return b?a.hide():a.fadeOut()},renderData:function(){return $(".js-pubu").html()}}})})}).call(this);
 //# sourceMappingURL=detail.js.map

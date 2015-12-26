@@ -99,8 +99,8 @@ app.use(function(req, res, next) {
 
 //配置站点地图和robots抓取
 app.get('/sitemap.xml', function(req, res, next) {
-
-  siteFunc.setDataForSiteMap(req, res);
+  res.redirect('/')
+  //siteFunc.setDataForSiteMap(req, res);
 
 });
 
@@ -132,6 +132,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 /*指定路由控制*/
 app.use('/admin', validat);
 app.use('/admin', admin);
+// app.use('/users',function(){
+//   res.redict('/')
+// })
 app.use('/users', users);
 app.use('/api', api);
 app.use('/', routes);
@@ -158,24 +161,26 @@ app.use(function(req, res, next) {
 // will print stacktrace
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    siteFunc.renderToTargetPageByType(req, res, 'error', {
-      info: '出错啦！',
-      message: err.message,
-      page: 'do500'
-    });
+    res.redirect('/')
+    // res.status(err.status || 500);
+    // siteFunc.renderToTargetPageByType(req, res, 'error', {
+    //   info: '出错啦！',
+    //   message: err.message,
+    //   page: 'do500'
+    // });
   });
 }
 
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  siteFunc.renderToTargetPageByType(req, res, 'error', {
-    info: '出错啦！',
-    message: err.message,
-    page: 'do500'
-  });
+  //res.status(err.status || 500);
+  res.redirect('/')
+  // siteFunc.renderToTargetPageByType(req, res, 'error', {
+  //   info: '出错啦！',
+  //   message: err.message,
+  //   page: 'do500'
+  // });
 });
 
 

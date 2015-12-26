@@ -227,6 +227,37 @@ textarea{
     }
   }
 }
+.fix-box{
+  position: fixed;
+  z-index: 9999;
+  right: 10px;
+  bottom: 50px;
+  li{
+    width: 80px;
+    text-align: center;
+    background: @white;
+    border:1px solid @gray-lighter;
+    height: auto;
+    padding: 10px 10px 0 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    position: relative;
+    cursor: pointer;
+    img{
+      position: absolute;
+      width:150px;
+      height: 150px;
+      border:1px solid @gray-lighter;
+      right: 85px;
+      top: 0;
+      display: none;
+    }
+    i{
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+  }
+}
 .banner{
   position: relative;
   height: 560px;
