@@ -35,11 +35,11 @@
             <div class="p-tip">
               <p class="price"><i class="ar ar-pei-fu full-left"></i> 价格：&nbsp;&nbsp;<b>＄<%=documentInfo.price %></b></p>
               <p><i class="ar ar-location full-left"></i> 位置：&nbsp;&nbsp;&nbsp;<%=documentInfo.location %></p>
-              <% if(documentInfo.callWay == 1){ %>
+              <% if(documentInfo.callWay == 0){ %>
               <p><i class="ar ar-tencent full-left"></i> ＱＱ：&nbsp;&nbsp;&nbsp;<%=documentInfo.callString %></p>
-              <% }else if(documentInfo.callWay == 2){ %>
+              <% }else if(documentInfo.callWay == 1){ %>
               <p><i class="ar ar-wechat full-left"></i> 微信：&nbsp;&nbsp;&nbsp;<%=documentInfo.callString %></p>
-              <% }else if(documentInfo.callWay == 3){ %>
+              <% }else if(documentInfo.callWay == 2){ %>
               <p><i class="ar ar-phone full-left"></i> 电话：&nbsp;&nbsp;&nbsp;<%=documentInfo.callString %></p>
               <% } %>
             </div>
