@@ -28,15 +28,15 @@ router.get("/manage", function(req, res, next) {
   }
 });
 
-router.get("/manage/*", function(req, res, next) {
-
-  if (isAdminLogined(req)) {
-    next();
-  } else {
-    res.redirect("/admin");
-  }
-
-});
+// router.get("/manage/*", function(req, res, next) {
+//
+//   if (isAdminLogined(req)) {
+//     next();
+//   } else {
+//     res.redirect("/admin");
+//   }
+//
+// });
 
 //自定义校验扩展
 validator.extend('isUserName', function(str) {
