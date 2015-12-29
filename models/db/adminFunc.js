@@ -221,20 +221,19 @@ var adminFunc = {
   },
 
   checkAdminPower: function(req, key) {
-    // var power = false;
-    // var uPower = req.session.adminPower;
-    // if (uPower) {
-    //   var newPowers = eval(uPower);
-    //   for (var i = 0; i < newPowers.length; i++) {
-    //     var checkedId = newPowers[i].split(':')[0];
-    //     if (checkedId == key && newPowers[i].split(':')[1]) {
-    //       power = true;
-    //       break;
-    //     }
-    //   }
-    // }
-    // return power;
-    return true;
+    var power = false;
+    var uPower = req.session.adminPower;
+    if (uPower) {
+      var newPowers = eval(uPower);
+      for (var i = 0; i < newPowers.length; i++) {
+        var checkedId = newPowers[i].split(':')[0];
+        if (checkedId == key && newPowers[i].split(':')[1]) {
+          power = true;
+          break;
+        }
+      }
+    }
+    return power;
   },
 
   renderToManagePage: function(req, res, url, pageKey) {
