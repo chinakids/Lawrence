@@ -23,9 +23,11 @@ var cache = require('../util/cache');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-
-  siteFunc.renderToTargetPageByType(req, res, 'index');
-
+  if(req.hostname.indexOf('lawrence2shou') !== -1){
+    siteFunc.renderToTargetPageByType(req, res, 'index');
+  }else{
+    res.redirect('http://www.baidu.com');
+  }
 });
 
 //缓存站点地图
